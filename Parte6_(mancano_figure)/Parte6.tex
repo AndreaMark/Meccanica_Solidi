@@ -1,0 +1,636 @@
+\documentclass{article}
+\usepackage[left=0.85in, right=0.85in, top=0.5in, bottom=0.95in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{wrapfig2}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cases}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,    
+	urlcolor=blue,
+	pdfpagemode=FullScreen,
+}
+\urlstyle{same}
+\usepackage{changepage}
+\usepackage{lastpage, epstopdf}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{background}
+
+
+%=======HEADER & FOOTER=======%
+\def\lesson{Lesson Title}
+%\def\outcome{\textbf{Learning Outcomes:} Outcomes go here. }
+
+%\pagestyle{fancy}
+%\fancyhf{}
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{1.4pt}
+%\lfoot{My Name $\diamond$ \the\year}
+%\cfoot{Page \thepage/\pageref{LastPage}}
+%\rfoot{\lesson}
+
+%=======CORNELL STYLE FORMAT=======%
+\SetBgScale{1}
+\SetBgAngle{0}
+\SetBgColor{black}
+\SetBgContents{\rule{1pt}{0.899\paperheight}}
+\SetBgHshift{-1.6in}
+\SetBgVshift{-0.1in}
+
+%=======CUSTOM BOXES=======%
+
+\parindent 0ex
+
+%=======BODY=======%
+\begin{document}
+	%	\setcounterpageref{secnumdepth}{0}
+	\section*{MECCANICA DEI SOLIDI: PARTE 6} %Date: \hrulefill}
+%	\begin{tcolorbox}{\outcome}\end{tcolorbox}
+
+
+\begin{adjustwidth}{2in}{} 
+{\Large \textbf{Strutture Reticolari}} \mbox{} \newline
+	Una struttura reticolare è un tipo di struttura formata solamente da maglie triangolari, è un sottoinsieme di corpi e vincoli a forma triangolare, sono composte unicamente da cerniere interne ed esterne e corpi rettilinei. Nel caso in cui i carichi siano applicati esclusivamente sui nodi della struttura, questa si configura essere una struttura molto resistente, la sua particolarità risiede infatti nel fatto che le aste non sono mai caricate e le forze e i momenti vengono applicati sui nodi della struttura. \newline
+	
+	A parità di resistenza è una struttura molto più leggera di qualunque struttura piana. \newline 
+	
+	Con questo tipo di struttura si ottiene una sollecitazione di corpi esclusivamente di sforzo normale, questo tipo di struttura è in grado di scaricare a terra le forze, è come se fosse una trave appoggio-appoggio che scarica le forze sui supporti a terra sollecitando i singoli corpi esclusivamente a sforzo normale evitando taglio e momento flettente. \newline 
+	
+	Come si calcolano le molteplicità statica e cinematica di una struttura di questo tipo? Ovvero, quali sono i vincoli semplici? 
+	
+	Sia A cerniera che crea una accoppiamento tra tre corpi, Tra I e II e tra I e III $s$ è il numero di equazioni di vincolo linearmente indipendenti tra loro, se $ I=II $ e $ II=III $, c'è bisogno di scrivere che $ I=III $? No, è linearmente dipendente. \newline 
+	
+	E allora $s=4$ in C e D, $s=4$ in A, $s=3$ in B dati calla cerniera interna e dal carrello esterno $s=2+1$, $s=6$ in E, G, H. 
+	\[s=33\Rightarrow~\text{11 corpi} \Rightarrow 3t-s=l-i\Rightarrow 33-33 = l-i \Rightarrow l=i\]
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.15\linewidth]{immagini/1.PARTE6_Pagina_02}
+\end{figure}
+
+	Quanto vale $l$? Considerando il secondo teorema dell'allineamento questo recita che c'è moto relativo tra tre corpi se i centri di spostamento relativi sono allineati. IN questo caso, qualunque corpo si scelga i centri relativi coincidono proprio con le cerniere e non sono MAI allineati: se a 3 a 3 i copri si comportano come un corpo unico, allora è la struttura stessa che può essere considerata come un corpo unico, gli unici centri di spostamento da considerare divengono così quelli esterni che non sono mai allineati, è una struttura appoggi-appoggio ferma $l=0$. \newline 
+
+	Una struttura reticolare, ovvero una struttura fatta da maglie triangolari di corpi rettilinei connessi fra loro esclusivamente da cerniere è una struttura isostatica. 
+	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{immagini/1.PARTE6_Pagina_02 (2)}
+\end{figure}	
+	È stato tuttavia detto, in passato, che delle strutture rettilinee non direttamente caricate con cerniere alle estremità possono essere considerate come pendoli interni, in questo modo i nodi, i punti di applicazione del carico divengono corpi puntiformi.
+	
+	In queste condizioni un corpo puntiforme può avere soltanto 2 gradi di libertà, ovvero lo spostamento nel piano e il problema viene così descritto dalle seguenti quantità.
+	
+	Indicando con $c$ il numero di cerniere, o il numero di punti di contatto, o i nodi della struttura reticolare; con $a$ in numero di aste, o il numero di pendoli e con $s_{ext}$ il numero di vincoli esterni, si ha che per una struttura reticolare vale: 
+	\[ l - i = 2c -(a-s_{ext}) \] 
+	Come reagisce un pendolo interno? Solo ed unicamente con delle forze lungo il proprio asse; ovvero guardando a seguire o a precedere lungo il pendolo interno si vedono solo forze lungo l'asse. 
+	
+	Dunque, che tipo di sollecitazioni si potranno avere? Di solo sforzo normale. 
+	\[\begin{cases}
+		M(s)=0\\
+		T(s)=0
+	\end{cases}\]
+
+{\Large \textbf{Diagramma di Momento Flettente}} \mbox{} \newline
+	Si aggiunge al metodo grafico per le reazioni vincolari e fornisce una rappresentazioni qualitativa del momento flettente senza dover passare dalla risoluzione delle caratteristiche della sollecitazione. 
+	 
+	Le equazioni indefinite di equilibrio sono: 
+\[ \begin{cases}
+\begin{aligned}
+	\dfrac{dN}{ds} + p(s)  &= 0 \\
+\dfrac{dT}{ds} + q(s)  &= 0 \\
+\dfrac{dM}{ds} - T(s) + m(s)  &= 0 
+\end{aligned}
+\end{cases}
+\]
+	L'integrazione di queste equazioni porta al disegno dei diagrammi corrispettivi. ATTENZIONE nei punti di discontinuità della struttura e nell'applicazione di carichi concentrati, in questi casi sarà necessario applicare opportune condizioni di continuità negli intorni considerati. \newline
+
+\textbf{Caso 1} 
+	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{immagini/1.PARTE6_Pagina_04}
+\end{figure}
+	Tale struttura è isostatica, essendo in equilibrio per ogni forza applicata, si può utilizzare il metodo grafico. 
+	
+	Attenzione ad F, forza concentrata. \newline 
+	
+	L'equilibrio delle forze diviene:
+	\[a + f +c =0\] 
+	Tracciando le rette di applicazione delle forze e chiudendole l'equilibrio si ottiene: 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.15\linewidth]{immagini/1.PARTE6_Pagina_04 (2)}
+\end{figure}
+		Notare come in B la discontinuità imposta dalla forza concentrata corrisponda ad uno scalino nello sforzo di Taglio pari a $F\sin\alpha$ e nello sforzo Normale pari a $F\cos\alpha$, nel diagramma del momento corrisponde invece ad una cuspide.
+		
+	Si ricordi poi inoltre come a precedere sia necessario cambiare di segno alle caratteristiche della sollecitazione rispetto all'orientazione $n,t$ positiva prevista. 
+ 	\[ \begin{cases}
+ 		\Delta N_B = N_B^+ - N_B^- = -F\cos\alpha \\
+ 		 \Delta T_B = T_B^+ - T_B^- = -F\sin\alpha \\
+ 	\end{cases} \]
+ 
+ 	La cerniera in A applica uno sforzo di taglio e uno sforzo normale, il pendono in C applica uno sforzo normale in direzione dell'asse di C, e quindi in questo caso sia tangenziale che normale. La discontinuità sarà pari ai moduli normale e tangenziale della forza concentrata.
+ 	
+ 	Per tracciare il diagramma di momento flettente si parte da A con una pendenza qualsiasi, perché in A, non essendo in grado la cerniera di applicare un momento flettente, questo sarà sicuramente nullo. 
+ 	
+ 	In AB il taglio è costante e positivo, la pendenza del momento è perciò positiva e costante e il suo diagramma sarà lineare e crescente. Arrivati alla discontinuità in B il momento diviene decrescente, poiché il pendolo non offre momento, il diagramma, dopo la discontinuità dovrà ritornare ad essere nullo in C. \newline
+ 	
+\textbf{ Caso 2}\newline
+ Si applichi, sulla stessa struttura, un carico distribuito tra B e C. 
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=0.4\linewidth]{immagini/1.PARTE6_Pagina_05}
+ \end{figure}
+Ai fini dell'equilibrio, quindi per trovare le reazioni vincolari, si può confondere il carico distribuito con una forza concentrata. Nel momento in cui però interesseranno le caratteristiche della sollecitazione, sarà necessario ritornare a considerare il carico distribuito in quanto tale. \newline
+ 	
+ 	L'equilibrio diviene così pari a:
+ 	\[a + f +d =0\]
+ 	Tracciando le rette d'azione delle forze e chiudendo l'equilibrio si ottene:
+ 	 \begin{figure}[H]
+ 		\centering
+ 		\includegraphics[width=0.15\linewidth]{immagini/1.PARTE6_Pagina_05 (2)}
+ 	\end{figure}
+ 	Essendo le reazioni vincolari in A e D identiche, nel diagramma di sforzo normale guardare a precedere o guardare a seguire non influenza il risultato: lo sforzo normale è costante lungo tutta la struttura, ed essendo positivo, l'intera trave è soggetta a trazione.  
+ 	
+ 	Nel grafico del taglio si evidenzia invece come agli estremi della trave questo cambi di segno, mettendosi in B e guardando a precedere, cambiando di segno, il taglio è concorde a $t$, quindi positivo, mettendosi in C e guardando a seguire senza cambiare di segno, il taglio è negativo perché discorde a $t$.
+ 	
+ 	Tra B e C il taglio sente l'influenza del carico concentrato, che applicato in mezzeria porta ad una variazione lineare del taglio con 0 proprio in mezzeria. 
+ 	
+ 	Poiché $M=\int T$ se il taglio è nullo il diagramma del momento flettente avrà pendenza costante e se il taglio è lineare il diagramma del momento varierà col legge quadratica: In questo caso il diagramma del momento flettente ha un andamento parabolico con massimo in corrispondenza de taglio nullo.  \newline
+	
+ 	Notare come in B' e C' il diagramma reale abbia la
+ 	stessa pendenza di quello dovuto alla
+	Forza concentrata (T in B e C è uguale
+	nei due casi).
+	
+	Ricapitolando, non essendo applicato alcun sforzo normale, il diagramma risulterà costante, mentre essendo lo sforzo di taglio come se fosse applicato al centro, l'integrazione delle equazioni indefinite di equilibrio restituisce una retta con pendenza negativa che si annulla nel punto di applicazione della forza, il diagramma del momento invece, restituisce una parabola, data dall'integrazione della retta dello sforzo di taglio. \newpage
+	
+\textbf{Focus: Costruzione di una parabola}\newline
+Come costruire una parabola che rispetti la tangenza della rette da cui parte? \newline 
+
+\begin{itemize}
+	\item In questo caso siano $t_1, t_2$ le rette di partenza, si identificano i punti $M_1, M_2$ come punti medi di $QP_1$ e $QP_2$ tali che $P_1M_1=M_1Q; P_2M_2=M_2Q$. 
+
+\item Si tracci $t_3$ che unisca $ M_1 $ ed $ M_2 $. In $M_1M_2$ si individui il punto $P_3$ tale che $P_3M_1 = P_3M_2$ punto medio. \newline 
+
+La parabola sarà tangente a $P_1, P_2, P_3$.
+
+\item A questo punto si reitera. 
+
+Su $PM_1$ si trova $N_1$ come suo punto medio e su $P_3M_1$ si trova $N_2$ suo punto medio. Sulla retta $N_1N_2$ si trova $T_1$ come punto medio. 
+
+Si trova in egual modo nel ramo di destra il punto $T_3$ medio di $N_3N_4$. \newline
+
+La parabola sarà tangente a $P_1, T_1, P_2,T_2, P_3$. 
+
+\item Si può scegliere di continuare su $P_1N_1$ e $N_1T_1$ a sinistra e a destra con $P_2N_4$ e $ N_4T_2 $.
+\end{itemize}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{immagini/1.PARTE6_Pagina_06}
+\end{figure}
+	Ricapitolando: Siano $ P_1 $ e $ P_2  $ punti per i quali passa la parabola, siano $ t_1 $ e $ t_2 $ le rette tangenti alla parabola in $ P_1 $ e
+	$ P_2 $.
+	Dato $ Q $ l’intersezione di $ t_1 $ e $ t_2 $, $ M_i $ sono i punti medi dei segmenti $ P_i Q $.
+	La parabola passa per $ P_3 $ punto medio di $ M_1 M_2 $ e ivi tangente a $ t_3 $.
+	Iterando il procedimento si ottiene la parabola. \newline
+	\newpage
+	
+\textbf{Caso 3}
+Si applichi alla stessa struttura analizzata finora un momento concentrato in mezzeria.
+ \begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{immagini/1.PARTE6_Pagina_07}
+\end{figure}
+	Con la presenza di un momento concentrato antiorario, positivo, l'equilibrio delle forze diviene: 	
+\[a + m +c =0\]
+	Questo sta a significare che per bilanciare un momento, i vincoli A e C devono esplicare una coppia di forze oraria, negativa, ma in che modo? Deve per forza valere che
+ \[a \parallel c\] 
+ 
+ 
+ Per il diagramma di sforzo normale, mettendosi in B e guardando a precedere, quindi verso A (e ricordandosi di cambiare di segno), la reazione vincolare di A è concorde a $t$, e quindi diviene positiva, mettendosi in C e continuando a guardare a precedere si vede sempre la stessa reazione vincolare di A che causa sforzo normale negativo. Ugualmente ponendosi un $\varepsilon$ prima di C e guardando a seguire si vede la sola reazione vincolare di C, negativa: Lo sforzo normale è costante e negativo lungo tutta la struttura. La trave, per rispondere al momento flettente si comprime uniformemente. \newline 
+ 
+ Per il diagramma di taglio valgono le stesse considerazioni fatte per lo sforzo normale, sia a seguire che a precedere si vedono le stesse reazioni vincolari, in questo caso però il taglio diviene sí costante lungo tutta la struttura, ma positivo. \newline 
+ 
+ Per il diagramma di momento flettente si procede come per gli altri casi visti fin'ora. 
+ 
+ In A il momento è sicuramente nullo, in più il taglio è positivo costante, quindi la pendenza del moneto sarà positiva e lineare. Si arriva in B, in presenza di discontinuità data dal momento concentrato. 
+ 
+ Ora che il metodo grafico per il diagramma di momento flettente sia un metodo qualitativo è assodato, ma dev'essere in scala, per cui una volta assegnata in A una pendenza positiva lineare (in accordo ai risultati) ma arbitraria, non si può decidere l'entità del salto, ma non si hanno informazioni sull'entità dello stesso se non per il fatto che:
+ \[\Delta M_B = M_B^+ + M_B^- = -M\]
+ Ma non è sufficiente. 
+ 
+ Si analizzi allora il grafico del taglio, questo infatti è uguale sia in AB che in BC, questo significa che la pendenza del diagramma del momento dev'essere uguale, ovvero positiva e crescente, in questo modo, sapendo che il momento in C si annulla, si ottiene la costanza della pendenza del momento:
+\[ AB' \parallel B''C\]
+
+	Ricapitolando, l'applicazione di un momento concentrato porta alla formazione di una coppia di forze/reazioni vincolari uguali e opposti. Non essendoci l'applicazione diretta di sforzi normali o tangenziali i diagrammi di questi risulteranno costanti pari ai valori assunti da questi negli intorni della cerniera e del carrello. 
+
+	Essendo, come detto, il taglio costante il diagramma del momento sarà una retta a pendenza costante che si annulla sui dei vincoli che non esplicano momento (in questo caso cerniera e carrello). La discontinuità data dal momento concentrato sarà pari al valore del momento concentrato, e il diagramma sarà la composizione di due rette parallele posizionate rispettivamente dove sono le fibre tese e quelle compresse.    \newline 
+	
+\textbf{Caso 4} \newline
+In questo caso si riporta l'esempio di una struttura isostatica, caricata uniformemente da un carico distribuito. 
+ \begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{immagini/1.PARTE6_Pagina_08}
+\end{figure}
+	In questa struttura l'equilibrio si esplica come: 
+\[a + f + b =0 \]
+	Noto che il doppio pendolo in B può esplicare una forza trasportabile nell'intersezione delle due rette $a$ ed $f$, sorge un problema: la retta d'azione $b$ non incontrerà mai l'intersezione di $a$ ed $f$, perché entrambe hanno rette d'azione fissate e sono tra di loro parallele, mentre $b$ è ortogonale ad entrambe, quindi B non può rispondere con un momento di trasporto (= forza traslata = forza + momento) ma essendo la struttura isostatica, $b$ è un momento concentrato antiorario che si oppone alla coppia di forze oraria. 
+	
+	Un momento in B è l'unica soluzione di equilibrio , se così non fosse non si avrebbe equilibrio. \newline
+
+	Il carico è distribuito ma si può vedere come se fosse concentrato e applicato a metà della struttura. \newline
+	 
+	Riassumendo, il pendolo in A, così disposto, non esplicherà alcun sforzo normale ma solo uno sforzo di taglio. Il doppio pendolo in B esplicherà un momento. \newline
+	
+	Il diagramma dello sforzo normale sarà nullo, questa struttura non è nè trazionata, nè compressa in direzione assiale. \newline
+	
+	Il diagramma dello sforzo di taglio si ottiene mettendosi in B e guardando a precedere e ricordando di cambiare di segno. $a$ è discorde ad $n$ e quindi il diagramma sarà positivo e massimo in A il carico distribuito, opposto ad $a$, contribuirà ad una diminuzione dello sforzo di taglio esplicato dal pendolo. Il diagramma del taglio si chiuderà a 0 sul doppio pendolo B, incapace questo di esplicare alcuno sforzo di taglio, ottenendo un grafico lineare. \newline
+	
+	Il diagramma del momento flettente partirà in A con valore nullo e crescerà in rispetto del taglio positivo lineare fino ad attestarsi ad un valore massimo ottenuto in corrispondenza doppio pendolo, che tende le fibre inferiori della trave, concordando con il segno del momento antiorario esplicato.  \newline
+	
+	\textbf{Caso 5}\newline
+	Si riporta in questo caso una discontinuità di pendenza. 
+	
+	IMAG
+	
+	L'equilibrio è dato da
+	\[a+b+m+c=0 \Rightarrow(a+b)+m+c=0\]
+	È noto il caso per cui due forze equilibrano un momento se e solo se danno vita ad una coppia di forze, per cui:
+	\[(a+b)\parallel c\] 
+	Ma quando sono in equilibrio $a+b$?
+	
+	$a+b-(a+b) = 0$ devono concorrere in un punto, in più sapendo che $a+b$ deve compiere una coppia di forze con $c$, dev'essere parallela a quest'ultima: essendo $M\circlearrowleft$, la coppia $(a+b)$ e $c$ deve essere $ \circlearrowright $. 
+	
+	È importante capire che in questo caso non si deve creare un triangolo chiuso come per validare un equilibrio, ma deve venirsi a creare un vero e proprio parallelepipedo, per cui il finale di $b$ e l'iniziale di $a$ danno la somma chiudendo il parallelepipedo. 
+	
+	IMAG equilibrio
+	
+	L'interesse è votato soprattutto a tracciare il diagramma di momento flettente. \newline 
+	
+	\begin{enumerate}
+		\item guardando a precedere. 
+		
+		In A il momento è nullo, ma con che pendenza si parte? Si scopone in componenti $R_A$, il taglio è positivo e le fibre tese sono nella parte destra del ramo.
+		
+		\item guardando a precedere. 
+		
+		In questo punto ci sono sia $R_A$ che $R_B$, la loro somma è un vettore $\uparrow$, questo sta a significare che in quel punto il taglio è nullo, e quindo il diagramma del momento ha pendenza costante.
+		
+		\item Variazione di pendenza. 
+		
+		Il momento non cambia ma come riparto? l segno lo trovo attraverso la convenzione del concio elementare.
+		
+		Disegno
+		
+		Se nel ramo inferiore il momento traziona le fibre a destra della struttura e quindi è un momento orario, per mantenere il segno positivo del concio, nel ramo orizzontale di struttura il momento sarà antiorario trazionando le fibre sottostanti: il ribaltamento è interno. 
+		
+		Disegno
+		
+		\item Il diagramma parte dal valore appena ribaltato, ma che pendenza avrà? So che a precedere $(a+b)$ il taglio è positivo, quindi il diagramma sarà crescente. 
+		
+		Il più è noto che il momento flettente in una generica sezione è pari alla forza che in questo caso si ha a precedere per il braccio considerato, il braccio è la distanza tra $(a+b)$ e il punto considerato, ovverosia $4$. In questo caso quindi l problema si riconduce a trovare in che punto della struttura orizzontale la forza considerata a precedere fa braccio nullo, si tratta di chiedersi \textit{"dov'è che la forza considerata interseca la struttura che sto considerando o un suo prolungamento?"}. 
+		
+		Il diagramma del momento flettente passerà per il punto di nullo individuato in $N_1$ e per il punto di ribaltamento. 
+		
+		\item Cosa succede in $M$? La discontinuità data dal moneto concentrato è incognita. 
+		
+		\item Guardando a seguire, ovvero C, il momento è nullo proprio in C è sempre crescente ed ha la stessa pendenza di $N_1G'$. 
+		D'altro canto guardando a seguire si ha lo stesso contributo che si ha guardando a precedere, infatti guardando  precedere si ha $a+b+m$ che dall'equilibrio dà $c$. 
+		
+		Il diagramma si chiude così in C con in tratto $G''C$ con la stessa pendenza ottenuta nel tratto di struttura DG.
+	\end{enumerate}
+
+\textbf{Caso 6}\newline 
+	Si riporta in questo caso un diagramma di momento flettente di una struttura chiusa. 
+	
+	Il metodo grafico è applicabile se e solo le se struttura è 0 volte isostatica. 
+	
+	IMAG struttura
+	
+	In questo caso, non essendoci alcun vincolo esterno ed essendo i vincoli relativi non allineati, è possibile considerare il corpo come un corpo unico con 3 gradi di labilità $l=3$. 
+	\[3t-s=l-i\Rightarrow 9 - 6 = 3-i \Rightarrow -3 = 3-i \Rightarrow i=0\]
+	Una struttura come questa, labile 3 volte e iperstatica 0 volte è sempre in equilibrio? Solo per alcuni valori di forze esterne, ovvero quelle che soddisfano il \textit{teorema degli spostamenti virtuali}.
+	\[\vec{F}\cdot\vec{s} = 0\]
+	Le forze applicate sulla struttura sono uguali e opposte, collineari e autoequilibrate, significa che da sole danno risultante nulla. 
+	
+	Se si applica un qualunque campo di spostamenti moltiplicato per $F_1$ ed $F_2$, verranno fuori due contributi perfettamente uguali e opposti, il totale farà perciò un lavoro virtuale nullo, questo sistema di forze dà proprio:
+	\[L_V=0\]
+	Questa è una configurazione di forze tra quelle che ammettono equilibrio, allora è possibile applicare il metodo grafico. \newline 
+	
+	l'equilibrio è dato da, suddiviso in corpi:
+	\[\begin{cases}
+		I.\quad a^1 +f + b^1 = 0\\
+		II.\quad b^2+c^2 = 0 \\
+		III.\quad a^3+f+c^3 = 0
+	\end{cases}\]
+	
+	Disegno equilibrio.
+	
+	\textit{Fase 1}: si parte da B. 
+	
+	Dove sono le fibre tese? Si fissa un sistema di riferimento $n,t$ 
+	
+	\item[1.] Taglio negativo, fibre tese sopra la struttura. 
+	
+	Se si ha una sola forza sulla struttura, le fibre tese risulteranno sempre dalla parte della coda del vettore. 
+	
+	\item[G] Nell'angolo, nella discontinuità di pendenza, il diagramma di momento flettente è continuo. Dove sono le fibre teste?
+	
+	Se a sinistra di G le fibre tese sono sopra la struttura, il momento in quel caso è antiorario, al di sotto di G il momento sarà per forza orario e tenderà le fibre sempre a destra della struttura, il ribaltamento sarà perciò esterno. 
+	
+	\item[2.] L'unico contributo che a precedere genera momento flettente è B. Dov'è che B fa braccio nullo sulla struttura? Proprio in C. Si prosegue allora il diagramma di momento flettente passando per il punto di nullo in C e per il ribaltamento appena eseguito. 
+	
+	Dato che in C le forze sono uguali e opposte, ovvero la cerniera interna genera le stesse reazioni vincolari e quindi c'è continuità di taglio, dopo C il diagramma di momento continuerà ad avere la stessa pendenza col quale è partito. 
+	
+	\item[H] Sopra H le fibre tese sono interne per cui il momento sarà orario, per la continuità del momento in variazioni di pendenza, a destra di H questo dovrà essere antiorario e il ribaltamento sarà interno. 
+	
+	IMAG
+	
+	\item[3.] Come si continua dopo H? Il momento è sempre dato dalla risultante per il braccio, che si guardi a precedere o a seguire. Si deve perciò ricercare dove la risultante di ciò che si ha a precedere o a seguire dia braccio nullo, ovvero dov'è che incontra la struttura o un suo prolungamento. 
+	
+	C incontra la struttura in $N_3$. Il diagramma passa per il ribaltamento ed $N_3$.
+	
+	\item[4.] A seguire, sulla cerniera in A il momento è nullo è l'unica forza su quel corpo a dare contributo nullo ed intersecare la struttura. 
+	
+	\item[F] La forza concentrata darà discontinuità di taglio, sul grafico di momento flettente questa si traduce con una discontinuità di pendenza, in F il diagramma di momento avrà un punto di cuspide. 
+	
+	IMAG
+	
+	\item[5.] Considerando che in F il momento cambia pendenza e che in A ritorna a zero, il diagramma passerà per F e ritornerà a zero in A, avvalorando la cuspide trovata in F, in A il taglio è continuo per cui si attraverserà A con la stessa pendenza con cui ci si è arrivati. 
+	
+	\item[D] In D, a sinistra le fibre tese sono esterne, per cui il momento è antiorario, per continuità, sopra D il momento dovrà essere orario e tendere le fibre a sinistra della struttura: il ribaltamento sarà esterno. 
+	
+	\item[6.] Guardando a precedere si ha solo la forza in A, che incontra la struttura o un suo prolungamento nel punto $N_1$. Il diagramma passerà per il ribaltamento e per $N_1$. 
+	
+	\item[E] Sotto ad E le fibre tese sono esterne, il momento sarà perciò antiorario, a destra di E il momento sarà orario e tenderà le fibre superiori della struttura: il ribaltamento sarà esterno. 
+	
+	\item[7.] Guardando a precedere si vede A, che da contributo nullo laddove interseca la struttura $N_2$. Il diagramma passerà per il ribaltamento e per $N_2$ verificando la discontinuità di pendenza data dalla discontinuità di taglio offerta dalla forza concentrata F. 
+	
+	Dopo F il diagramma tornerà a chiudersi in 0 in B. 
+	
+	IMAG
+	
+	\textbf{Caso 7}\newline 
+	Si verifichi dapprima l'isostaticità. 
+	
+	IMAG struttura 
+	\[3t-s=l-i\Rightarrow 6 - 6 = 0-i \Rightarrow i=0\]
+	La struttura è isostatica. \newline 
+	
+	Attraverso il metodo grafico gli equilibri divengono: 
+		\[\begin{cases}
+		I.\quad a^1 +f + b^1 = 0\\
+		II.\quad b^2+c = 0 \\
+		g.\quad a+c+f = 0
+		\end{cases}\]
+	La retta d'azione del doppio pendono deve essere collineare a quella della cerniera.
+	
+	IMAG equilibrio
+	
+	Si parte da un punto per cui è noto il momento flettente:
+	\item[A] Dove sono le fibre tese? Sono rigorosamente esterne, arrivato all'angolo il momento si ribalta, se in basso le fibre tese sono esterne ed il momento sarà antiorario, a destra dell'angolo il momento sarà orario e le fibre tese continueranno ad essere superiori.\newline 
+	
+	Guardando a precedere si vede A, a seguire la somma di F + B continua a dare A. Su quel tratto di struttura orizzontale A si annulla in $N_1$, il diagramma passa per il ribaltamento ed $N_1$. 
+	
+	Arrivati alla forza concentrata cè una discontinuità di pendenza. 
+	
+	\item[1.] Guardando a precedere c'è A+F che dà sempre B, guardando a seguire c'è B che si annulla in B. 
+	
+	Il diagramma di momento flettente passa per la discontinuità ottenuta in F e si annulla in B. 
+	
+	\item[2.] Guardando a seguire ci si chiede, dove si annulla l'effetto di C? In B si ripartirebbe da 0, l'informazione è ridondante. 
+	
+	Allora nello stesso punto si guarda a precedere, ancora una volta cè B: vicolo cieco.\newline
+	
+	Si deve ripartire con la pendenza di prima? B è una cerniera interna, presenta una pendenza diversa , il taglio non è continuo con la pendenza, come si trova la pendenza per ripartire? \newline 
+	
+	In un punto qualunque della struttura orizzontale D il momento è dato da: \[\vec{F}\times\vec{b} = R_B\cdot d\]
+	Si traccia allora una retta parallela a $b$ a distanza $d$ che passa per D.\newline 
+	
+	Il nuovo punto di intersezione con la struttura verticale è E ed in quel punto ha lo stesso valore di momento flettente di partenza $R_B\cdot d$. 
+	
+	La forza analizzata è la stessa, B=C, la distanza $ d $ anche, resta solo da individuare quali siano le fibre tese, queste poste a sinistra della struttura. \newline 
+	
+	Il diagramma passa allora per il valore vero individuato in E e per il punto di nullo in B.
+	
+	IMAg diagramma 
+	
+	\textbf{Caso 7}\newline 
+	Si imponga alla stessa struttura un momento concentrato.\newline
+	
+		Attraverso il metodo grafico gli equilibri divengono: 
+	\[\begin{cases}
+		I.\quad a +m + b^1 = 0\\
+		II.\quad b^2+c = 0 \\
+		g.\quad a+c+m = 0
+	\end{cases}\]
+	La retta d'azione del doppio pendono deve essere collineare a quella della cerniera B, la cerniera A deve essere parallela alla retta B per rispondere al momento concentrato M. \newline 
+	
+	Partendo da A si arriva in D come nel caso precedente, in D però c'è una discontinuità. 
+	
+	In basso le fibre tese sono all'esterno, quindi il momento è antiorario, ma a destra di D? Non conoscendo nè il verso nè il valore come si riparte? Decidendo la pendenza iniziale del diagramma in A non si può più assolutamente scegliere o attribuire un'altra pendenza. \newline 
+	
+	Introduco un diagramma falso ignorando il momento M. 
+	
+	\item[1.] Si guarda a precedere e si ottiene un diagramma falso, dove si annulla il momento flettente se non ci fosse il momento concentrato? guardando a precedere, in $N_1$. 
+	
+	Tracciato il diagramma falso ora si riaggiunge il momento. Quando si introduce un momento concentrato che succede al suo diagramma? Dalla somma di $a+m$, se il contributo di forza $a$ è stato analizzato col diagramma falso, il contributo di momento concentrato, non agendo sul taglio, mantiene costante la pendenza: la pendenza individuata sul diagramma falso è vera, aggiungendo il momento non varia! \newline
+	
+	Il diagramma vero avrà la stessa pendenza di quello falso, ma qual è l'unica retta vera? Quella parallela (stessa pendenza) a quella falsa, passante per B punto di nullo. \newline 
+	
+	Ora arrivati in B, con quale pendenza di riparte da B? Come prima, si individua un punto ottenuto dalla parallela a B alla stessa distanza a cui associare un valore vero di diagramma di momento. \newpage
+	
+	
+	
+	
+	
+	
+	
+	
+	 
+	
+{\Large \textbf{Punto Triplo}} \mbox{} \newline
+\textbf{Caso 1}\newline
+Considerazione di strutture più connesse: in B c'è un equilibrio a rotazione dato da 3 elementi.
+
+Struttura appoggio-appoggio con ramo BD.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{immagini/1.PARTE6_Pagina_18}
+\end{figure}
+	Dopo aver trovato le reazioni vincolari attraverso il metodo grafico (la struttura è sempre in equilibrio, appoggio - appoggio), si procede all'analisi della struttura e al disegno del diagramma del momento flettente. 
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.15\linewidth]{immagini/1.PARTE6_Pagina_18 (2)}
+	\end{figure}
+	
+	Si parta da A, la coda di A è un basso, le fibre tese saranno in basso. Si arriva in B. \newline 
+	
+	Il punto triplo sarà in equilibrio sotto l'azione di un momento flettente che tende le fibre in basso più due momenti incogniti. 
+	
+	Non si può proseguire dicendo che il diagramma è continuo su tutto BC ignorando BD e viceversa. 
+	
+	Si deve garantire l'equilibrio del punto triplo. \newline 
+	
+	Partendo dal tratto AB, si vuole tracciare il diagramma sul tratto BC, ignorando il tratto BD.
+	
+	\begin{enumerate}
+		\item Da dove si viene? Si traccia il diagramma di momento flettente guardando a precedere del punto triplo, BD non esiste. 
+		
+		A precedere del punto triplo c'è A, che incontra la struttura considerata solo in A, il diagramma falso si ottiene allora prolungando il diagramma iniziale AB. 
+		
+		\item Si riconsidera il ramo ignorato e ci si chiede, dov'è che le forze agenti sul ramo ignorato danno contributo nullo sul ramo considerato? D'altro canto il diagramma falso ottenuto tiene conto soltanto di A, ma sul punto triplo si ha F + A. \newline 
+		
+		Si sta tracciando il diagramma su BC, c'è allora un punto in cui la forza F del ramo BD incontra la struttura BC o un prolungamento della stessa? $N_1$. In quel punto ci sarà l'ordinata vera, ovvero il valore vero di momento flettente individuato sul diagramma falso. \newline 
+		
+		Per tracciare una retta si necessitano di due informazioni, se ne è appena scoperta una. 
+		
+		\item Ci si pone nuovamente sul punto triplo e si guarda a seguire, in questo caso ciò che si ha seguire è il tratto BC con la razione di C che si annulla in C. \newline 
+		
+		Ordinata vera + punto di nullo = due informazioni note, il diagramma passa per quel punto. 
+	\end{enumerate}
+
+	E il tratto verticale? 
+	
+	Partendo da tratto AB si vuole ora tracciare il diagramma BD, ignorando il tratto BC. 
+	
+	\begin{enumerate}
+		\item Da dove si viene? Si traccia il diagramma di momento flettente guardando a precedere del punto triplo, BC non esiste. 
+		
+		A precedere del punto triplo c'è A, che incontra la struttura verticale considerata in $N_2$, il diagramma falso si ottiene allora ribaltando esternamente il momento del tratto AB e passando per $N_2$ ed il ribaltamento. 
+		
+		\item Si riconsidera il ramo ignorato e ci si chiede, dov'è che le forze agenti sul ramo ignorato danno contributo nullo sul ramo considerato? \newline 
+		
+		Si sta tracciando il diagramma su BD, la forza C è parallela al ramo BD, cosa significa?
+		
+		Significa che la forza di C per il suo braccio è uguale ovunque sul tratto BD, significa che C dà contributo di momento constante, inoltre, che contributo a taglio dà C sulla struttura BD? Nullo, $C\parallel BD$ non dà contributo di taglio. \newline 
+		  
+		Il diagramma vero conserva la pendenza del diagramma falso. \newline 
+		
+		In sostanza quando ciò che si è trascurato è un momento concentrato  o un'azione che genera momento costante (forza parallela al ramo) allora nel diagramma falso non cè un valore puntuale di momento flettente vero, ma c'è un'altra informazione vera: la pendenza. 
+		
+		Per tracciare una retta si necessitano di due informazioni, se ne è appena scoperta una.
+		
+		\item Ci si pone nuovamente sul punto triplo e si guarda a seguire sul tratto verticale considerato, dov'è che F interseca la struttura? In D, in D è nullo il momento flettente. 
+		
+		Si traccia il momento flettente conservando la stessa pendenza del diagramma falso, con punto di nullo in D. 
+
+	\end{enumerate}
+
+	Per verifica della costruzione si valuta
+	l’equilibrio a rotazione in B, aiutandosi
+	con la convenzione delle fibre tese:
+	
+		\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.2\linewidth]{immagini/1.PARTE6_Pagina_19}
+	\end{figure}
+	
+In cui i moduli dei momenti $ M_{AB} + M_{DB} = M_{CB} $ sono proporzionali alle altezze dei triangoli tracciati nel diagramma.  \newline
+
+\textbf{Caso 2} \newline
+
+IMAG
+
+Equilibrio tra tre forze ed un momento, se e solo se il vettore somma di due forze è parallelo alla forza che deve bilanciare il momento. 
+\[\begin{cases}
+	a+c+e+m = 0 \\
+	(a+c)+m+e=0 \\
+	(a+c)\parallel e
+\end{cases}\]
+$a+c$ passa per l'intersezione di A e C e deve essere parallela ad E. \newline 
+
+Il diagramma parte da AB, si vuole tracciare BC, si trascura il ramo BE. 
+
+\begin{enumerate}
+	\item  A precedere del punto triplo c'è solo A, il diagramma falso prosegue. 
+	
+	\item Cosa si è trascurato? Dov'è ciò che è stato trascurato da contributo nullo sulla struttura BC che si sta considerando? \newline 
+	
+	È stato trascurato $m+e = a+c$ che dà contributo nullo in $N_1$, in questo modo si ottiene l'ordinata vera. 
+	
+	\item A seguire del punto triplo c'è la reazione C, che si annulla in C. 
+	
+	Il diagramma vero passerà per C e per l'ordinata vera in $N_1$.
+\end{enumerate}
+
+Il diagramma ora parte da BC, si vuole tracciare BD, si trascura il ramo AB. 
+
+\begin{enumerate}
+	\item Si ribalta internamente e si guarda a precedere, C non dà contributo nullo perché è parallela al ramo, il diagramma falso parte dal ribaltamento e prosegue costante col valore del ribaltamento. 
+	
+	\item Si riconsidera ora ciò che è stato trascurato, ovvero A, che incontra la struttura interessata in $N_2$. 
+	
+	\item Guardando a seguire dal punto triplo, nel tratto interessato, c'è $m+e=a+c$, che incontra la struttura in $N_3$, il diagramma vero passerà per l'ordinata trovata in $N_2$ e per $N_3$ punto di nullo. \newline 
+	
+	Il diagramma vero si interromperà però in M a causa del momento concentrato, il diagramma in quel punto effettuerà un salto. 
+\end{enumerate} 
+
+Oltrepassato M, a seguire c'è E, che incontra il prolungamento della struttura in $N_4$, il diagramma passerà con la stessa pendenza con cui si è arrivati in M, per $N_4$ dopodiché in D seguirà un ribaltamento interno e il diagramma si richiuderà in E. \newline 
+
+\newpage
+
+\textbf{Caso 3}\newline 
+IMAG
+
+Caso di forza esterna applicata su vincolo interno. Si aprono due strade:
+\begin{enumerate}[I]
+	\item O si decide che F è applicata un $\varepsilon$ a destra o sinistra della cerniera e la si considera su uno dei sue corpi.
+	\item F scompare ma B ha un'azione diversa da sinistra e a destra: una delle reazioni vincolari tiene conto di F. 
+\end{enumerate}
+Nel primo caso gli equilibri diventano:
+\[ b^1=b^2  \hspace{1cm} \begin{cases}
+	a+b^1+f = 0 \\
+	b^2+c=0 \\
+	a+c+f = 0
+\end{cases}  \]
+
+Nel secondo caso gli equilibri diventano:
+\[b^1\ne b^2  \hspace{1cm}\begin{cases}
+	a+b^1 = 0 \\
+b^2+c=0 \\
+	a+c+f = 0
+\end{cases} \]
+Risolvendo il secondo caso ci si accorge che: 
+\begin{itemize}
+	\item $ a+b^1 $ le due retta $ B^1 $ e A sono collineari
+	\item $b^2+c=0$ le due rette $ B^2 $ e C sono collineari.
+	\item $a+c+f$ A passa per B.
+\end{itemize}
+Le direzioni incognite sono:
+
+IMAG
+
+Scegliendo questa strada, quando si disegna il diagramma di momento flettente si parte da A, le fibre tese sono a sinistra, si arriva al cambiamento di pendenza con continuità di taglio: il ribaltamento è esterno, il diagramma di momento flettente si chiude in B.\newline 
+
+Come si riparte da B?
+
+Quando c'è un elemento problematico come può essere questa cerniera interna direttamente caricata, si inizia a tracciare il grafico ignorandone il contributo: si traccia un diagramma falso e poi un diagramma vero col contributo che è stato trascurato.  \newline 
+
+\textbf{F non esiste}. Il diagramma falso in B preserva la continuità del taglio data dalla cerniera interna, si continua a disegnare il diagramma falso fino a D.
+
+Per trovare la pendenza di ripartenza si guarda a precedere: il momento di annulla dove $B^1$ incontra la struttura che si sta considerando od un prolungamento della stessa $N_1$, su uniscono i punti e si finisce il diagramma falso. \newline 
+
+\textbf{F esiste}. Ora sul ramo verticale c'è un'intersezione con F (ovvero con ciò che è stato trascurato) con il prolungamento della struttura  $N_2$ e si riporta in quel punto l'ordinata vera.
+
+Con l'ordinata vero ora nota, si guarda a seguire, ovvero C, che si annulla in $C_0$: si traccia così il diagramma vero, che si ribalterà in D e si chiuderà in D. 
+	
+	
+		\vfill
+\begin{tcolorbox}[height=4.5cm]
+	This box has a height of 1cm.
+\end{tcolorbox}
+
+\end{adjustwidth}
+\end{document}

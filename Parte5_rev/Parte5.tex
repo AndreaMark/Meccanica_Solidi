@@ -1,0 +1,933 @@
+\documentclass{article}
+\usepackage[left=0.85in, right=0.85in, top=0.5in, bottom=0.95in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{wrapfig2}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb} %\degree
+\usepackage{cases}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,    
+	urlcolor=blue,
+	pdfpagemode=FullScreen,
+}
+\urlstyle{same}
+\usepackage{changepage}
+\usepackage{lastpage, epstopdf}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{background}
+
+
+%=======HEADER & FOOTER=======%
+\def\lesson{Lesson Title}
+%\def\outcome{\textbf{Learning Outcomes:} Outcomes go here. }
+
+%\pagestyle{fancy}
+%\fancyhf{}
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{1.4pt}
+%\lfoot{My Name $\diamond$ \the\year}
+%\cfoot{Page \thepage/\pageref{LastPage}}
+%\rfoot{\lesson}
+
+%=======CORNELL STYLE FORMAT=======%
+\SetBgScale{1}
+\SetBgAngle{0}
+\SetBgColor{black}
+\SetBgContents{\rule{1pt}{0.899\paperheight}}
+\SetBgHshift{-1.6in}
+\SetBgVshift{-0.1in}
+
+%=======CUSTOM BOXES=======%
+
+\parindent 0ex
+
+%=======BODY=======%
+\begin{document}
+%	\setcounterpageref{secnumdepth}{0}
+	\section*{MECCANICA DEI SOLIDI: PARTE 5} %Date: \hrulefill}
+%	\begin{tcolorbox}{\outcome}\end{tcolorbox}
+
+
+\begin{adjustwidth}{2in}{} 
+{\Large \textbf{Caratteristiche della Sollecitazione}} \mbox{} \newline
+	Cosa accade più in dettaglio nel corpo? non bastano più i descrittori statici per capire come una struttura viene sollecitata. \newline 
+	
+	Si consideri un corpo monodimensionale, ovvero con una dimensione preponderante rispetto alle altre, la linea media.
+	Si fissi su di esso un’ascissa curvilinea che si muove lungo suddetta linea media, ed un riferimento formato da un asse normale ed un asse
+	tangenziale all’asse del corpo. \newline 
+	
+	Una terna $n, t, z$ che ha come origine l'ascissa curvilinea.
+	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.15\linewidth]{"immagini/1.PARTE5_Pagina_02 (2)"}
+\end{figure}
+
+	Questi corpi monodimensionali caratterizzati da una linea media descrivibile mediante un'ascissa curvilinea nel piano si chiamano travi o elementi fondamentali. \newline
+	
+	Si immagini di caricare tale struttura con un sistema di forze generico e autoequilibrato in modo che \(\begin{cases} \vec{R} = 0 \\ \vec {M} = 0\end{cases}\) \newline	
+	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.15\linewidth]{"immagini/1.PARTE5_Pagina_02"}
+\end{figure}
+
+
+	Si immagini poi di tagliare in $S$ la trave in due tronchi. Dato che il corpo deve continuare a rimanere in equilibrio deve valere:
+
+	\[
+	\begin{cases} \vec{R} = \vec{R}' + \vec{R}'' = 0 \\ \vec {M} = \vec{M}' + \vec{M}'' = 0\end{cases}
+	\]
+	
+	Nel momento del taglio sull'interfaccia di separazione nasceranno forze e momenti che garantiscono il tratto che precede la sezione essere in equilibro con il tratto che segue.\newline 
+	
+	Considerando l'applicazione  di soli carichi esterni, i due corpi - ora separati - non sono più in equilibrio.
+	Affinché il corpo 1 rimanga equilibrato è necessario applicare sulla sezione di taglio $ S $ le azioni che gli
+	vengono comunicate dal corpo 2. Viceversa accadrà per il corpo 2. \newline
+
+	I due tratti si scambiano così delle forze attraverso la sezione di taglio, di conseguenza se si carica la trave in
+	un punto l’effetto si risconterà lungo tutta la sua lunghezza.
+	
+	Essendo il corpo in equilibrio, laddove verrà eseguita un'interruzione dello stesso, nasceranno dei descrittori statici che garantiranno l'equilibrio della porzione. 
+	
+	I descrittori statici delle forze interne di interazione funzione
+	dell’ascissa curvilinea sono:
+	\[
+	\vec{R}(s) \hspace{3cm} \vec{M}(s)
+	\]
+\newpage	
+	In questo modo si possono riscrivere gli equilibri per ogni corpo ottenuto dalla sezione: \newline
+	
+	\mbox{Equilibrio corpo 1
+	$
+	\begin{cases}
+	\vec{R}'+ \vec{R}(s) =0 \\
+		\vec{M}'+ \vec{M}(s) =0
+		\end{cases}
+	$
+} \hspace{1cm} \mbox{Equilibrio corpo 2
+	$
+	\begin{cases}
+		\vec{R}'' - \vec{R}(s) =0 \\
+		\vec{M}''- \vec{M}(s) =0 
+	\end{cases}
+	$
+} 
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.15\linewidth]{"immagini/1.PARTE5_Pagina_03 (2)"}
+		\includegraphics[width=0.15\linewidth]{"immagini/1.PARTE5_Pagina_03"}
+	\end{figure}
+
+	Le risultanti delle azioni di interruzione risultano: \newline 
+
+ $\vec{R}(s)$ sia:{\small  \mbox{$
+ 	\begin{cases}
+ 		\text{la risultante di tutte le forze che precedono la sezione di taglio,  cambiata di segno;} \\
+ 		\text{la risultante di tutte le forze che seguono la sezione di taglio. }
+ 	\end{cases}$}}\newline
+
+ $\vec{M}(s)$ sia:{\small  \mbox{$
+ 		\begin{cases}
+ 			\text{la risultante di tutti i momenti che precedono la sezione di taglio, cambiata di segno;} \\
+ 			\text{la risultante di tutti i momenti che seguono la sezione di taglio. }
+ 		\end{cases}$}}\newline
+
+	Si definiscono le caratteristiche della sollecitazione come le proiezioni sul riferimento solidale all’ascissa
+	curvilinea di $ R(s) $ ed $ M(s) $.	\newline 
+	
+	Un problema piano è caratterizzato dalle seguenti caratteristiche della sollecitazione:
+
+\begin{itemize}
+	\item \textbf{SFORZO DI TAGLIO}: azione trasferita lungo la direzione parallela alla sezione di taglio, o normale alla linea media
+	\[
+	T(s) = \vec{R}(s) \cdot \hat{n}
+	\]
+	\item \textbf{SFORZO NORMALE}: azione trasferita lungo la direzione ortogonale alla sezione di taglio, o tangenziale all'ascissa curvilinea
+	\[
+	N(s) = \vec{R}(s) \cdot \hat{t}
+	\]
+	\item \textbf{MOMENTO FLETTENTE}: momento il cui vettore agisce ortogonalmente al piano $ nt $
+	\[
+	M_f(s) = \vec{M}(s) \cdot \hat{k}
+	\]
+\end{itemize}
+
+	Queste azioni interne al corpo rispondono alla domanda: com'è sollecitato il corpo? 
+	
+	Queste azioni sono proprie della posizione $s$ lungo il corpo, possono perciò variare lungo la struttura, sono caratteristiche locali che variano lungo l'ascissa curvilinea. \newline 
+	
+	\begin{center}
+		\textbf{Esempio: come variano queste caratteristiche su di una struttura piana?}
+	\end{center}
+	
+	Data una $s$ definita arbitrariamente si può definire una terna di riferimento locale $n, t, z$. 
+	
+	Si vogliono ricavare la caratteristiche della sollecitazione sulla sezione $S$. \newline 
+	
+	\textbf{NB} Nel momento in cui si parla di caratteristiche della sollecitazione non si può più considerare il $q$ come forza concentrata $ql$ applicata in mezzeria, ora torna ad essere un carico distribuito che agirà sulla porzione di trave considerata, in questo caso è applicato, in funzione dell'ascissa curvilinea, nella mezzeria di $l-s$.
+	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE5_Pagina_05 (2)"}
+\end{figure}
+
+	Risolvendo l'equilibrio della struttura:
+	\[R_x:\lambda_1 + F = 0\] 
+	\[R_y: \lambda_2 - ql+\lambda_3 = 0\]
+	\[M_A: {ql^2\over2} + \lambda_3l = 0\]
+	E partendo dal considerare il corpo 2 e osservando tutto ciò che accade a seguire rispetto alla sezione $S$, si ha: 
+	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE5_Pagina_05"}
+\end{figure}
+
+	\[\vec{R}(s) = \vec{R}'' = F\hat{i} + \frac{ql}{2} \hat{j} - q(l-s) \hat{j} = F\hat{i} + q\left( s- \frac{l}{2}\right) \hat{j}	\]	
+	\[\vec{M}(s) = \vec{M}'' =\frac{ql}{2}(l-s) \hat{k}  - q(l-s)\frac{(l-s)}{2} \hat{k}	\]	
+	\[
+	T(s) = \vec{R}(s) \cdot \hat{n} = -\vec{R}(s) \cdot \hat{j} = q\left( -s + \frac{l}{2}\right) 
+	\]
+	\[
+	N(s) = \vec{R}(s) \cdot \hat{t} = \vec{R}(s) \cdot \hat{i} = F
+	\]
+	\[
+	M_f(s) = \vec{M}(s) \cdot \hat{k} = qs \frac{l-s}{2}
+	\]
+	\[\boxed{\begin{aligned}
+	T(s) & =  q\left( -s + \frac{l}{2}\right)  \\ N(s) & =  F \\ M_f(s) & = qs \frac{l-s}{2}
+	\end{aligned}}\] 
+
+	Si trovano funzioni valide per tutta la struttura. \newline 
+	
+	E guardando a precedere? Il risultato è lo stesso, con l'accortezza che la risultante ottenuta DEVE essere cambiata di segno.
+	
+	\[\vec{R}(s) = -\vec{R}' = -\left[ -F\hat{i} + \frac{ql}{2} \hat{j} - qs \hat{j}\right]  = F\hat{i} + q\left( s- \frac{l}{2}\right) \hat{j}	\]
+	\[\vec{M}(s) = -\vec{M}' = -\left[ -\frac{ql}{2}s \hat{k}  + qs\frac{(s)}{2} \hat{k}\right] \]
+	\[
+	T(s) = \vec{R}(s) \cdot \hat{n} = -\vec{R}(s) \cdot \hat{j} = q\left( -s + \frac{l}{2}\right) 
+	\]
+		\[
+	N(s) = \vec{R}(s) \cdot \hat{t} = \vec{R}(s) \cdot \hat{i} = F
+	\]
+	\[
+	M_f(s) = \vec{M}(s) \cdot \hat{k} = qs \frac{l-s}{2}
+	\]
+	\[\boxed{\begin{aligned}
+			T(s) & =  q\left( -s + \frac{l}{2}\right)  \\ N(s) & =  F \\ M_f(s) & = qs \frac{l-s}{2}
+	\end{aligned}}\] 
+\newpage
+{\Large \textbf{Concio Elementare}} \mbox{} \newline	
+	Dato un elemento di lunghezza infinitesima di trave si dice che si è estratto concio elementare.
+	
+	Il concio elementare nasce danna necessità di una regola che permetta di definire univocamente i segni delle caratteristiche della sollecitazione. \newline 
+	
+	Si estrae da una struttura in equilibrio un elemento in equilibro su cui nascono  caratteristiche della sollecitazione tali da mantenere il concio ancora in equilibrio. 
+	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{"immagini/1.PARTE5_Pagina_07"}
+\end{figure}
+
+	Definita una terna $n, t, k$ destrorsa, si ha:
+	\begin{itemize}
+		\item $N>0$ se uscente 
+		\item $T>0$ se genera una rotazione oraria $ \circlearrowright $
+		\item $M>0$ se genera un allungamento/trazione delle fibre inferiori/sottostanti.
+	\end{itemize}
+
+{\Large \textbf{Equazioni Indefinite di Equilibrio}} \mbox{} \newline	
+	Si consideri una trave rettilinea in equilibrio con pendenza continua dell’asse (linea d'asse rettilinea) caricata esclusivamente
+	con carichi distribuiti.
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.15\linewidth]{"immagini/1.PARTE5_Pagina_08 (2)"}
+\end{figure}
+
+	Si estragga da questa un concio elementare che avrà i versi di $N, T, M$ decisi convenzionalmente.
+	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE5_Pagina_08"}
+\end{figure}
+	Se si estrae il concio da una struttura in equilibrio, allora anche localmente dovrà essere in equilibrio. 
+	
+	Le equazioni di equilibrio diverranno così:
+	\[
+	T(s+\Delta s) - T(s) + \int_{s}^{s+\Delta s} q(x)dx = 0
+	\]
+	\[
+	N(s+\Delta s) - N(s) + \int_{s}^{s+\Delta s} p(x)dx = 0
+	\]
+	\[
+	M(s+\Delta s) - M(s) -T(s+\Delta s)\Delta s + \int_{s}^{s+\Delta s} m(x)dx - \int_{s}^{s+\Delta s} q(x)(x-s)dx = 0
+	\]
+	Dove per il calcolo del momento si è scelta come polo la prima faccia $s$, $M(s)$ è negativa perché è una rotazione oraria e l'assenza di $ N(s) $ e $ T(s) $ è dovuta al fatto che passano per il polo. 
+
+	Per dimostrare che le funzioni sono continue si ponga essere $\Delta s\rightarrow 0$: \newline
+	\begin{center}
+		\mbox{$ \begin{cases}
+			\int_{s}^{s+\Delta s} q(x)dx \\
+			\int_{s}^{s+\Delta s} p(x)dx \\
+			\int_{s}^{s+\Delta s} m(x)dx - \int_{s}^{s+\Delta s} q(x)(x-s)dx 
+		\end{cases}$} $	\rightarrow 0$ \newline
+	\end{center}
+	E allora: 
+		\[
+	T(s+\Delta s) - T(s)  = 0
+	\]
+	\[
+	N(s+\Delta s) - N(s)  = 0
+	\]
+	\[
+	M(s+\Delta s) - M(s)  = 0
+	\]
+	Le tre funzioni sono tutte e tre continue. \newline 
+	
+	Si ritorni ora alle equazioni di equilibrio di partenza e le si divida per  $\Delta s\rightarrow 0$: \newline
+	\[
+	\frac{T(s+\Delta s) - T(s)}{\Delta s} + \frac{\int_{s}^{s+\Delta s} q(x)dx}{\Delta s} = 0
+	\]
+	\[
+	\frac{N(s+\Delta s) - N(s)}{\Delta s} + \frac{\int_{s}^{s+\Delta s} p(x)dx}{\Delta s} = 0
+	\]
+	\[
+	\frac{	M(s+\Delta s) - M(s)}{\Delta s} -\frac{T(s+\Delta s)\Delta s}{\Delta s} + \frac{\int_{s}^{s+\Delta s} m(x)dx}{\Delta s} - \frac{\int_{s}^{s+\Delta s} q(x)(x-s)dx}{\Delta s} = 0
+	\]
+	Ottenendo infine le \textbf{EQUAZIONI INDEFINITE DI EQUILIBRIO}:
+	\[
+	\boxed{\begin{aligned}
+		\frac{dT(s)}{ds} +  q(s) & = 0 \\
+		\frac{dN(s)}{ds} + p(s) & = 0 \\
+		\frac{dM(s)}{ds} - T(s) +  m(s) & = 0
+	\end{aligned}}
+	\]
+	
+	Sono equazioni differenziali che hanno bisogno di condizioni al contorno per essere risolte, definiscono l'equilibrio tra le azioni esterne di pressioni $P$, carichi distribuiti $q$ e momenti applicati, con le caratteristiche della sollecitazione interne. \newline 
+	
+\begin{center}
+		\textbf{Si ritorni all'esempio precedente:}
+\end{center}
+	
+	Tali equazioni indefinite di equilibrio sono facilmente integrabili frontalmente. \newline 
+	
+	Quello delle equazioni indefinite di equilibrio è un approccio ulteriore a quello della definizione delle caratteristiche della sollecitazione.
+	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE5_Pagina_11"}
+\end{figure}
+	
+	Si nota come integrando le equazioni indefinite di equilibrio queste non produrranno una soluzione univoca ma funzioni indefinite, ovvero generano costanti da definire attraverso opportune condizioni al contorno, queste altro non sono che valori particolari dei descrittori statici che si possono esprimere gratuitamente senza eseguire calcoli.
+	\[
+	\begin{cases}
+		\frac{dT(s)}{ds} +  q(s) = 0 \\
+		
+		\frac{dN(s)}{ds} + p(s) = 0 \\
+		
+		\frac{dM(s)}{ds} - T(s) +  m(s) = 0
+	\end{cases} \Rightarrow \begin{cases}
+	T(s) = -qs + C_2 \\
+	
+	N(s) = C_1 \\
+	
+	M(s) = -\frac{1}{2}qs^2 + sC_2 + C_3
+	\end{cases}
+	\] \newline
+	
+	In questo caso sono necessarie tre equazioni al contorno che risolvano le caratteristiche della sollecitazione ma che siano totalmente gratuite. \newline
+	
+	Un punto interno alla struttura è totalmente ignoto, non dà alcunissima informazione sulle caratteristiche della sollecitazione, sarà necessario allora concentrarsi sui punti noti, sui vincoli. \newline
+	
+	In $A$ ci si mette dopo $A$ e si guarda a precedere, in $B$, ci si mette prima di $B$ e si guarda a seguire. \newline
+	
+{\Large \textbf{Condizioni al Contorno}} \mbox{} \newline	
+	Si osserva, in punti chiave della struttura, se ci sono applicati a precedere o a seguire momenti, sforzi normali o sforzi tangenziali:
+	
+	\begin{itemize}
+	\item Ponendosi in A e osservando ciò che precede non ci sono momenti: \[M(s=0) = 0\]
+	\item Ponendosi in B  e osservando ciò che segue non ci sono momenti: \[M(s=l) = 0\]
+	\item Ponendosi in B e guardando ciò che segue, c'è F: \[N(s=l) = F\]
+	\end{itemize}
+	 Si sostituiranno queste condizioni al contorno nelle funzioni generali prima ottenute: 
+	 \[
+	\begin{cases}
+		M(s=0) = 0 \Rightarrow C_3 = 0 \\
+		
+		M(l) = 0 \Rightarrow C_2 = \frac{1}{2}ql\\
+		
+		N(s=l) = F \Rightarrow C_1 = F
+	\end{cases} \Rightarrow \begin{cases}
+	T(s) = q\left( \frac{l}{2} -s\right) \\
+	
+	N(s) = F \\
+	
+	M(s) = -\frac{1}{2}qs^2 + -\frac{1}{2}qls
+	\end{cases}
+	\]
+	Si sono cosi ottenute le stesse identiche caratteristiche della sollecitazione ottenute prima, ma senza risolvere il problema statico, ovvero senza dover trovare le reazioni vincolari. \newline
+	
+	Le caratteristiche della sollecitazione si possono graficare:
+	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE5_Pagina_13"}
+\end{figure}
+
+	Lo sforzo normale è costante e positivo. \newline 
+	
+	Lo sforzo di taglio è variabile linearmente con $s$: agli estremi il taglio corrisponde alla reazione vincolare cambiata di segno. \newline 
+	
+	Il momento flettente è convenzionalmente rappresentato positivo dalla parte delle fibre teste, ed è una funzione quadratica in $s$.
+	
+	Da questi grafici e ricordando la forma delle equazioni indefinite di equilibrio si nota subito come il taglio $T$ sia nient'altro che la pendenza del momento in assenza di momenti concentrati $m$.
+	 
+	Infatti se in mezzeria il taglio è nullo, il momento flettente sarà il massimo. \newline
+	
+	\mbox{$
+		\begin{cases}
+			\text{Derivata} \\
+			\text{Funzione}
+		\end{cases}$} \hspace{1cm} \mbox{$
+	\begin{cases}
+	\text{Taglio positivo?} \\
+	\text{Momento crescente!}
+\end{cases}$} \hspace{1cm} \mbox{$
+\begin{cases}
+\text{Taglio negativo?} \\
+\text{Momento decrescente!}
+\end{cases}$} \newline
+	
+	
+	Come si è visto per ottenere la soluzione particolare associata alle equazioni indefinite di equilibrio è necessario porre
+	delle condizioni al contorno.
+	
+	Queste dovranno essere conosciute a priori e riguarderanno solamente le forze agenti sulla trave e non le sue
+	caratteristiche cinematiche.
+	
+	Il numero di condizioni al contorno da individuare per ottenere le costanti di integrazione lo si ha solo se la
+	struttura è isostatica, per un multiplo di 3: $\text{domini di integrazione}\times 3$.	
+	
+	Si tratta solitamente di condizioni al bordo, ovvero localizzate sul bordo del dominio di integrazione delle
+	equazioni e legate alla presenza di vincoli o forze concentrate.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE5_Pagina_14"}
+\end{figure}
+	\[
+	\begin{split}
+		M(A) & = -M_2 \\
+		T(A) & = -F_4 \\
+		N(A) & =-F_3
+	\end{split} \hspace{2cm} \begin{split}
+	M(B) & = M_1 \\
+	T(B) & = F_1 \\
+	N(B) & = F_2
+\end{split}
+	\]
+	
+	Poiché si maneggiano equazioni differenziali, queste devono rispondere alle condizioni di derivabilità e quindi continuità: nei punti di discontinuità sarà necessario interrompere il dominio di integrazione.
+	
+ 	In questo modo le discontinuità del dominio di integrazione possono diventare fonti di condizioni al contorno.
+ 	
+ 	Queste possono essere: 
+ 	\begin{enumerate}
+ 		\item Discontinuità di pendenza dell'asse della trave, e in quel caso si considera il dominio rettilineo a tratti;
+ 		\item Presenza di forze concentrate interne alla trave;
+ 		\begin{enumerate}
+ 			\item variazione della distribuzione del carico distribuito;
+ 		\end{enumerate}
+ 	\end{enumerate}
+ 
+ 	Una condizione limite per le equazioni indefinite di equilibrio è quella che prevede la struttura non essere isostatica, nel momento in cui si ha iperstaticità significa che il numero di equazioni che si possono scrivere come condizioni al contorno non sono sufficienti alla risoluzione completa delle caratteristiche della sollecitazione. \newline
+\newpage 
+\textbf{Discontinuità di pendenza} 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.2\linewidth]{"immagini/1.PARTE5_Pagina_15"}
+\end{figure}
+	 A e B sono i bordi del dominio fisico.
+ 
+ 	Presentando l’asse della trave una discontinuità, vengono meno le ipotesi di formulazione  delle
+	equazioni indefinite di equilibrio. 
+ 
+ 	Quello che si fa è distinguere la trave in due domini matematici perchè è proprio in $P$ che la terna $n, t, k$ varia di orientazione. 
+ 
+ 	Si ponga essere il particolare concio elementare:
+ 	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE5_Pagina_16"}
+\end{figure}
+Le condizioni al contorno dovranno comporsi di condizioni al contorno alle estremità date dai vincoli, e condizioni al contorno di continuità date dello spezzarsi del dominio. \newline
+
+	Ipotizzando le risultanti dei due corpi come segue:
+	\[
+	\begin{split}
+		\vec{R}' & = -\vec{R}''  \\
+		\vec{M}' & = -\vec{M}'
+	\end{split} \hspace{2cm} \begin{split}
+		N'(P) = \vec{R}' \cdot \hat{t}' = R'\cdot \hat{t}' \\
+		N''(P) = \vec{R}'' \cdot \hat{t}'' = R'\cdot t\hat{t}'' \\
+		T'(P) = \vec{R}' \cdot \hat{n}' = R'\cdot \hat{n}' \\
+		T''(P) = \vec{R}'' \cdot \hat{n}'' = R'\cdot \hat{n}''  \\
+	\end{split}		
+	\]	
+	In cui il prodotto scalare è un prodotto scalare a cui si sostituiscono i moduli. È molto importante notare come se due vettori abbiano lo stesso modulo ma versori diversi, allora sono vettori diversi. \newline
+	
+ 	Sebbene il modulo delle reazioni vincolari rimanga lo stesso, è da notare che i versori tangenti variano direzione e questo basta ad affermare che N e T non sono più
+ 	continue in un intorno di P.
+ 	
+ 	Ciò che rimane continuo nell’intorno di P è invece il momento M, perché è proprio il versore $k$ a rimanere lo stesso, a non cambiare orientazione. \newline
+ 	
+ 	Il risultato è che in presenza di variazioni di pendenza il momento flettente rimane continuo. \newline
+\newpage
+\textbf{Presenza di forze concentrate}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE5_Pagina_17 (2)"}
+\end{figure}
+	A causa delle forze concentrate non è garantita la continuità delle caratteristiche di sollecitazione, anche in questo caso è necessario 
+	dividere la trave in due domini di integrazione.
+	
+	Allo stesso concio elementare si applichino forze concentrate. 
+	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE5_Pagina_17"}
+\end{figure}
+	Si ripetano poi i passaggi eseguiti per ottenere le equazioni indefinite di equilibrio, in forma integrale diventano così: 
+	\[
+	T(s+\Delta s) - T(s) + \int_{s}^{s+\Delta s} q(x)dx + F_V= 0
+	\]
+	\[
+	N(s+\Delta s) - N(s) + \int_{s}^{s+\Delta s} p(x)dx + F_O = 0
+	\]
+	\[
+	M(s+\Delta s) - M(s) -T(s+\Delta s)\Delta s + \int_{s}^{s+\Delta s} m(x)dx - \int_{s}^{s+\Delta s} q(x)(x-s)dx + M= 0
+	\]
+	Si noti inoltre come non compare il momento della forza $F_V$, infatti questo sarebbe pari a $F_V\cdot{\Delta s\over 2}\rightarrow 0$. \newline 
+	
+	Per $\Delta s \rightarrow 0$: 
+	
+	\[\boxed{\begin{aligned}
+	T(s+\Delta s) - T(s) & =- F_V \\
+	N(s+\Delta s) - N(s) & =- F_O \\
+	M(s+\Delta s) - M(s) & =-M
+	\end{aligned}}\]
+	
+	Queste equazioni dicono che nell'intorno del punto di applicazione di una forza, le caratteristiche della sollecitazione $N,T,S$ sono diverse a precedere e a seguire dal punto di applicazione.\newline
+	
+	Presentando una discontinuità di prima specie si conclude che nel caso di forze concentrate le caratteristiche della sollecitazione non sono continue, ed è proprio di questa discontinuità che sarà necessario tenere in considerazione nell'assegnazione delle condizioni al contorno. \newline
+  	
+	L’entità della discontinuità è pari al modulo del carico concentrato. \newpage
+	
+\begin{center}
+\textbf{		Nello stesso Esempio di prima si ponga una forza concentrata $F$ anziché una distribuita $q$.}
+\end{center}
+	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE5_Pagina_19"}
+\end{figure}
+	Si divida il tratto di trave in due tratti AC e CB,2 domini di integrazione $\times$ 3 caratteristiche della sollecitazioni fanno 6 condizioni al contorno da individuare.
+	
+	Se si sceglie di usare la stessa ascissa curvilinea per entrambi i tratti le equazioni indefinite di equilibrio restituiscono: 
+	
+	\[
+AC:	\begin{cases}
+		\frac{dT(s)}{ds}= 0 \\
+		
+		\frac{dN(s)}{ds}  = 0 \\
+		
+		\frac{dM(s)}{ds} = T(s) 
+	\end{cases} \Rightarrow \begin{cases}
+		T(s) = C_2 \\
+		
+		N(s) = C_1 \\
+		
+		M(s) =  sC_2 + C_3
+	\end{cases}
+	\] \newline
+	\[
+CB:	\begin{cases}
+	\frac{dT(s)}{ds}= 0 \\
+		
+	\frac{dN(s)}{ds}  = 0 \\
+		
+	\frac{dM(s)}{ds} = T(s) 
+	\end{cases} \Rightarrow \begin{cases}
+	T(s) = C_5 \\
+		
+	N(s) = C_4 \\
+		
+	M(s) =  sC_5 + C_6
+	\end{cases}
+	\]
+	
+	Condizioni al contorno/al bordo, ottenute dai vincoli, sono gratuite, si tratta di informazioni facilmente individuabili agli estremi della struttura. \newline
+	\[
+	\begin{split}
+		M_A= 0 & \Rightarrow M_{AC} (0)= 0 \Rightarrow C_3 = 0 \\
+		N_B= 0 & \Rightarrow N_{CB} (l)= 0 \Rightarrow C_4 = 0 \\
+		M_B= 0 & \Rightarrow M_{CB} (l)= 0 \Rightarrow lC_5 + C_6 = 0 \\
+	\end{split} \]
+
+	Discontinuità C, punto di interruzione del dominio, cosa accade nel suo intorno?
+	\[
+ 	\begin{split}
+		N^+_C - N^-_C = 0 & \Rightarrow N_{AC} \left( \frac{l}{2}\right)  = N_{CB} \left( \frac{l}{2}\right)  \Rightarrow  C_1 = 0 \\
+		M^+_C - M^-_C = 0 & \Rightarrow M_{AC} \left( \frac{l}{2}\right)  = M_{CB} \left( \frac{l}{2}\right)  \Rightarrow  \frac{l}{2}C_2 + C_3 = \frac{l}{2}C_5 + C_6 \\
+		T^+_C - T^-_C = 0 & \Rightarrow T_{AC} \left( \frac{l}{2}\right)  = T_{CB} \left( \frac{l}{2}\right)  + F \Rightarrow  C_2 = C_5 + F \\
+	\end{split}
+	\]
+	Riorganizzando i risultati ottenuti:
+	\[
+AC: 	\begin{cases}
+		C_1 = 0 \\
+		C_2 = \frac{F}{2} \\
+		C_3 = 0
+	\end{cases} \Rightarrow \begin{cases}
+	T_{AC} = \frac{F}{2} \\
+	
+	N_{AC} = 0 \\
+	
+	M_{AC} =  s\frac{F}{2}
+\end{cases}
+	\] \hspace{0.5cm}
+	\[
+CB: 	\begin{cases}
+		C_4 = 0 \\
+		C_5 = -\frac{F}{2} \\
+		C_6 = \frac{Fl}{2}
+	\end{cases} \Rightarrow \begin{cases}
+		T_{CB} = -\frac{F}{2} \\
+		
+		N_{CB} = 0 \\
+		
+		M_{CB} =  s\frac{F}{2}+ \frac{Fl}{2} = \frac{F}{2}(l-s)
+	\end{cases}
+	\] \newpage
+	Ricordando poi che il diagramma del momento flettente è sempre disegnato positivo dalla parte delle fibre tese e ricordando che a precedere si cambia di segno (in questo modo la direzioni di applicazione divengo concordi ai vettori normale e tangenziale): 
+	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE5_Pagina_20"}
+	\end{figure}
+
+	Se si approssima una forza distribuita con una concentrata, a parità di condizioni statiche di equilibrio, le caratteristiche della sollecitazione sono totalmente diverse, il massimo viene sovrastimato rispetto al carico distribuito,finché si sta ragionando in termini di equazioni globali delle forze, si possono tradurre i carichi distribuiti in forze concentrate, nel momento in cui però si comincia a parlare di caratteristiche della sollecitazione, questa traduzione va ad alterare la distribuzione effettiva delle stesse.\newline
+	
+	Infatti in questo caso di forza concentrata applicata in mezzeria non cè una variazione continua del massimo, ma si individua la presenza di una cuspide a due volte il valore del massimo del carico distribuito. \newline 
+	
+\begin{center}
+		\textbf{Esempio II}
+\end{center}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE5_Pagina_21"}
+\end{figure}
+	In questo caso $s=3, t=1$, poiché il centro di spostamento dovrebbe stare all'infinito lungo $a$ o su $c$ ma $a\perp c$, ne consegue che il centro di spostamento non esiste ed $l=0$. \newline 
+	
+	Seppur si tratti di un solo corpo la reazione vincolare in C, $\lambda_3$, è una forza concentrata che fa variare il diminio di integrazione, e la struttura verrà spezzata in due domini. 
+	
+	\[
+	AC:	
+	\begin{cases}
+		T(s) = C_2 \\
+		
+		N(s) = C_1 \\
+		
+		M(s) =  sC_2 + C_3
+	\end{cases}
+	\] 
+	\[
+	CB: \begin{cases}
+		T(s) = C_5 \\
+		
+		N(s) = C_4 \\
+		
+		M(s) =  sC_5 + C_6
+	\end{cases}
+	\]
+	Le condizioni al contorno vanno imposte su caratteristiche della sollecitazione note, sono osservazioni fatte senza il bisogno di alcun calcolo. 
+	\[
+	\begin{split}
+		T_A= 0 & \Rightarrow T_{AC} (0)= 0 \Rightarrow C_2 = 0 \\
+		N_B= 0 & \Rightarrow N_{CB} (l)= 0 \Rightarrow C_4 = 0 \\
+		M_B= 0 & \Rightarrow M_{CB} (l)= 0 \Rightarrow lC_5 + C_6 = 0 \\
+		T_B= F & \Rightarrow T_{CB} (l)= F \Rightarrow C_5 = F
+	\end{split} \]
+	
+	Discontinuità C, punto di interruzione del dominio, cosa accade nel suo intorno?
+	\[
+	\begin{split}
+		N^+_C - N^-_C = 0 & \Rightarrow N_{AC} \left( \frac{l}{2}\right)  = N_{CB} \left( \frac{l}{2}\right)  \Rightarrow  C_1 = 0 \\
+		M^+_C - M^-_C = 0 & \Rightarrow M_{AC} \left( \frac{l}{2}\right)  = M_{CB} \left( \frac{l}{2}\right)  \Rightarrow  C_3 = \frac{l}{2}C_5 + C_6 \\
+		T^+_C - T^-_C = 0 & \Rightarrow T_{AC} \left( \frac{l}{2}\right)  = T_{CB} \left( \frac{l}{2}\right)  + F \Rightarrow  C_2 = C_5 + F \\
+	\end{split}
+	\]
+		Riorganizzando i risultati ottenuti:
+	\[
+	AC: 	\begin{cases}
+		C_1 = 0 \\
+		C_2 = 0 \\
+		C_3 = -{Fl\over2}
+	\end{cases} \Rightarrow \begin{cases}
+		T_{AC} = 0 \\
+		
+		N_{AC} = 0 \\
+		
+		M_{AC} =  -s\frac{F}{2}
+	\end{cases}
+	\] \hspace{0.5cm}
+	\[
+	CB: 	\begin{cases}
+		C_4 = 0 \\
+		C_5 = F \\
+		C_6 = -Fl
+	\end{cases} \Rightarrow \begin{cases}
+		T_{CB} = F \\
+		
+		N_{CB} = 0 \\
+		
+		M_{CB} =  F(l-s)
+	\end{cases}
+	\]
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE5_Pagina_22"}
+	\end{figure}
+	Il salto del taglio in C è dovuto alla reazione vincolare ed è pari proprio a $\lambda_3$.\newline 
+	
+	l'azione di un taglio positivo rende il moneto crescete fino al punto di discontinuità, e poi costante fino al vincolo A, che risponde con un momento, quella è proprio l'azione di momento esercitata dal doppio pendolo. \newline 
+\newpage	
+	\begin{center}
+		\textbf{Esempio III}
+	\end{center}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE5_Pagina_23(2)"}
+	\end{figure}
+	In questo caso è necessario interrompere il dominio in B a causa di una variazione di pendenza, ma se la pendenza fosse stata costante ci sarebbe stata lo stesso un divisione di domini, perché in quel punto è presente una variazione di carico distribuito.
+		
+	\[
+	AB:	
+	\begin{cases}
+		T(s) = C_2 \\
+		
+		N(s) = C_1 \\
+		
+		M(s) =  s_{AB}C_2 + C_3
+	\end{cases}
+	\] 
+	\[
+	CB: \begin{cases}
+		T(s) = -qs_{BC} + C_5 \\
+		
+		N(s) = C_4 \\
+		
+		M(s) = -{qs^2_{BC}\over2} s_{BC}C_5 + C_6
+	\end{cases}
+	\]
+	Le condizioni al contorno vanno imposte su caratteristiche della sollecitazione note, sono osservazioni fatte senza il bisogno di alcun calcolo. 
+	\[
+	\begin{split}
+		M_A= 0 & \Rightarrow M_{AB} (0)= 0 \Rightarrow C_3 = 0 \\
+		N_C= 0 & \Rightarrow N_{BC} (l)= 0 \Rightarrow C_4 = 0 \\
+		M_C= 0 & \Rightarrow M_{BC} (l)= 0 \Rightarrow -{ql^2\over2} lC_5 + C_6 = 0 \\
+		T_B= F & \Rightarrow T_{CB} (l)= F \Rightarrow C_5 = F \\
+	\end{split} \]
+	
+	Discontinuità B, punto di interruzione del dominio, cosa accade nel suo intorno?
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE5_Pagina_23"}
+	\end{figure}
+	
+	\[
+	\begin{split}
+		&\begin{cases}
+			N^+_B - N^-_B\cos45\degree  - T^-_B\sin45\degree  = 0 \\
+		N^+_B = {\sqrt{2}\over2}T^-_B + {\sqrt{2}\over2}N^-_B = 0  \Rightarrow N_{BC} (0)  = {\sqrt{2}\over2}T_{AB}(\sqrt{2}l) + {\sqrt{2}\over2}N_{AB}(\sqrt{2}l) 
+		\end{cases} \\ & \Rightarrow  C_4  = {\sqrt{2}\over2}C_2 + {\sqrt{2}\over2}C_1 \\ 
+		&\begin{cases}  
+		M^+_B = M^-_B  ~ \text{Il momento non varia per variazioni di pendenza} \\			
+		M^+_B = M^-_B   \Rightarrow M_{BC} (0)  = M_{AB}(\sqrt{2}l)  \Rightarrow  C_6 = C_2(\sqrt{2}l)+C_3
+		\end{cases} \\
+		&\begin{cases}
+			-T^+_B - T^-_B\cos45\degree  - N^-_B\sin45\degree  = 0 \\	
+		T^+_B = {\sqrt{2}\over2}T^-_B - {\sqrt{2}\over2}N^-_B = 0  \Rightarrow T_{BC} (0)  = {\sqrt{2}\over2}T_{AB}(\sqrt{2}l) - {\sqrt{2}\over2}N_{AB}(\sqrt{2}l)
+		\end{cases} \\ & \Rightarrow C_5  = {\sqrt{2}\over2}C_2 - {\sqrt{2}\over2}C_1\\
+	\end{split}
+	\]
+	 \newpage
+		Riorganizzando i risultati ottenuti:
+	\[
+	AB: \begin{cases}
+		T_{AB} = {\sqrt{2}\over8}ql \\
+		
+		N_{AB} = -{\sqrt{2}\over8}ql \\
+		
+		M_{AB} =  {\sqrt{2}\over8}qls_{AB}
+	\end{cases}
+	\] \hspace{0.5cm}
+	\[
+	BC: \begin{cases}
+		T_{BC} = -qs_{BC} + {ql\over4} \\
+		
+		N_{BC} = 0 \\
+		
+		M_{BC} =  -{qs^2_{BC}\over2} + {ql\over4}s_{BC} + {ql^2\over4}
+	\end{cases}
+	\]
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{"immagini/1.PARTE5_Pagina_24"}
+	\end{figure}
+
+	\begin{center}
+		\textbf{Esempio IV}
+	\end{center}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE5_Pagina_25"}
+	\end{figure}
+	I Centri di spostamento non sono mai allineati: $C_1\in A; C_{12}\in B; C_2\in g$ e al massimo si possono allineare B e $g$, ma mani tutti e tre: $l=0$. \newline 
+	
+	In B non c'è possibilità di spostamento relativo ma gli spostamenti assoluti sono sono qualsiasi, sono solo quelli perpendicolari all'asse del carrello. \newline 
+	
+	Ogni qualvolta un vincolo esterno è applicato su di un vincolo interno come in questo caso, è a propria discrezione considerare quel vincolo applicato ad un corpo piuttosto che ad un altro. \newline 
+	
+	Si suddivide la struttura in 3 domini l'interruzione del primo è data dall'applicazione della forza concentrata $\lambda_3$ da parte del carrello in B, mentre la seconda è data dalla variazione di pendenza o di carico distribuito. In ogni caso, questo significa 9 condizioni al contorno da individuare. 
+	
+	\[
+	AB:	
+	\begin{cases}
+		T(s) = C_2 \\
+		
+		N(s) = C_1 \\
+		
+		M(s) =  sC_2 + C_3
+	\end{cases}
+	\] 
+	\[
+	BC: \begin{cases}
+		T(s) = C_5 \\
+		
+		N(s) = C_4 \\
+		
+		M(s) =  sC_5 + C_6
+	\end{cases}
+	\]
+	\[
+	CD: \begin{cases}
+		T(s) = -qs+C_8 \\
+		
+		N(s) = C_7 \\
+		
+		M(s) =  -{1\over2}qs^2 + sC_8 + C_9
+	\end{cases}
+	\]
+	Le condizioni al contorno vanno imposte su caratteristiche della sollecitazione note, sono osservazioni fatte senza il bisogno di alcun calcolo. 
+	\[
+	\begin{split}
+		M_A= -M & \Rightarrow M_{AB} (0)= -M \Rightarrow C_3 = -M \\
+		M^-_B= 0 & \Rightarrow M_{AB} \left(l\over2\right)= 0 \Rightarrow C_2\left(l\over2\right)-M = 0 \\
+		M^+_B= 0 & \Rightarrow M_{BC} \left(l\over2\right)= 0 \Rightarrow C_5\left(l\over2\right)+C_6 = 0 \\
+		N^+_B-N^-_B = 0 & \Rightarrow N_{AB}\left(l\over2\right) = N_{BC}\left(l\over2\right) \Rightarrow C_1 = C_4 \\
+	\end{split} \]
+	In B lo sforzo normale è equilibrato, d'altro canto la cerniera è interna e c'è continuità di sforzo normale: \(\Delta N = N_B^{AB} + \lambda_5-\lambda_5 - N_B^{BC} = 0\) \newline
+	
+	Mentre dire che il momento flettente è uguale sia prima che dopo B, è semplicemente combinazione lineare delle precedenti condizioni al contorno, e quindi non viene presa in considerazione. \newline
+	
+	È il taglio nullo in B in questo caso? 
+	\[\Delta T = T_B^{AB} + \lambda_4 - \lambda_4 -T_B^{BC}-\lambda_3 = \lambda_3\]
+	Ma $\lambda_3$ è incognita, quindi non può entrare a far parte delle condizioni al contorno. 
+	
+	Dove con $\lambda_4, \lambda_5$ si sono indicate le reazioni vincolari della cerniera interna. \newline 
+	
+	Altre condizioni al contorno divengono: 
+	\[
+	\begin{split}
+		M_D= 0 & \Rightarrow M_{CD} (l)= 0 \Rightarrow -{1\over2}ql^2 + lC_8 + C_9 \\
+		(N_D\hat{t} + T_D\hat{n})\hat{g} & = 0 \Rightarrow {\sqrt{2}\over2}N_{CD}(l)-{\sqrt{2}\over2}T_{CD}(l)=0 \Rightarrow {\sqrt{2}\over2}C_7-{\sqrt{2}\over2}(-ql+C_8)=0 \\
+		M^-_C= M^+_C & \Rightarrow M_{CD} (0)= M_{BC}(l) \Rightarrow C_9 = C_5l+C_6 \\
+		N^+_C= T^-_C & \Rightarrow N_{CD} (0)= T_{BC}(l) \Rightarrow C_7 = C_5 \\
+		T^+_C= -N^-_C & \Rightarrow T_{CD} (0)= -N_{BC}(l) \Rightarrow C_8 = -C_54 \\
+	\end{split} \]
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE5_Pagina_26"}
+\end{figure}
+	Le condizioni al contorno sono null'altro che delle equazioni di equilibrio, in caso di variazione di pendenza queste divengono:
+	\[\begin{cases}
+		\text{Eq. orizzontale} ~ N_C^{CD} - T_C^{BC} = 0 \\
+		\text{Eq. verticale} ~ T_C^{CD} + N_C^{BC} = 0 \\
+		\text{Eq. a rotazione} ~ M_C^{CD} - M_C^{BC} = 0 \\
+	\end{cases}\]
+Mentre in D cosa si può dire? Che il momento è nullo. Taglio e sforzo normale invece devono avere dei valori che, identificata la loro somma vettoriale, questa moltiplicata per $\vec{g}$ dev'essere nulla. \newline
+	
+	Riorganizzando i risultati ottenuti:
+	\[
+	AB: \begin{cases}
+		T_{AB} = 2{M\over l} \\
+		
+		N_{AB} = -{2\over3}ql \\
+		
+		M_{AB} =  2{M\over l}s -M
+	\end{cases}
+	\] \hspace{0.5cm}
+	\[
+	BC: \begin{cases}
+		T_{BC} = -{ql\over 3} \\
+		
+		N_{BC} = -{2\over3}ql \\
+		
+		M_{BC} =  -{ql\over 3}s+{ql^2\over 6}
+	\end{cases}
+	\]
+	\hspace{0.5cm}
+	\[
+	CD: \begin{cases}
+		T_{CD} = -qs+{ql\over 3} \\
+		
+		N_{CD} = -{ql\over 3} \\
+		
+		M_{CD} =  -{1\over2}qs^2+{2qls\over 3} -{ql^2\over6}
+	\end{cases}
+	\]
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE5_Pagina_27"}
+	\end{figure}
+	Dov'è il massimo del momento? In corrispondenza del taglio nullo. Parte da un valore negativo e cresce linearmente. Al taglio costane positivo corrisponde poi una funzione crescente del momento flettente. 
+	
+	Il fatto che il grafico del momento flettente è sempre negativo indica che le fibre tese sono sempre quelle superiori e mai inferiori. 
+	
+	
+	\newpage
+	\textbf{\LARGE NOTE}
+	
+	
+	
+	
+%		\vfill
+%		\begin{tcolorbox}[height=4.5cm]
+%				This box has a height of 1cm.
+%			\end{tcolorbox}
+	
+\end{adjustwidth}
+\end{document}
