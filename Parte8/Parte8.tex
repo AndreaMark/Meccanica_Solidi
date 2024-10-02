@@ -1,0 +1,1744 @@
+\documentclass{article}
+\usepackage[left=0.85in, right=0.85in, top=0.5in, bottom=0.95in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{wrapfig2}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{amssymb}
+\usepackage{cases}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,    
+	urlcolor=blue,
+	pdfpagemode=FullScreen,
+}
+\urlstyle{same}
+\usepackage{changepage}
+\usepackage{lastpage, epstopdf}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{background}
+
+
+%=======HEADER & FOOTER=======%
+\def\lesson{Lesson Title}
+%\def\outcome{\textbf{Learning Outcomes:} Outcomes go here. }
+
+%\pagestyle{fancy}
+%\fancyhf{}
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{1.4pt}
+%\lfoot{My Name $\diamond$ \the\year}
+%\cfoot{Page \thepage/\pageref{LastPage}}
+%\rfoot{\lesson}
+
+%=======CORNELL STYLE FORMAT=======%
+\SetBgScale{1}
+\SetBgAngle{0}
+\SetBgColor{black}
+\SetBgContents{\rule{1pt}{0.899\paperheight}}
+\SetBgHshift{-1.6in}
+\SetBgVshift{-0.1in}
+
+%=======CUSTOM BOXES=======%
+
+\parindent 0ex
+
+%=======BODY=======%
+\begin{document}
+	%	\setcounterpageref{secnumdepth}{0}
+	\section*{MECCANICA DEI SOLIDI: PARTE 8} %Date: \hrulefill}
+%	\begin{tcolorbox}{\outcome}\end{tcolorbox}
+
+
+\begin{adjustwidth}{2in}{} 
+{\Large \textbf{Equazioni della Linea Elastica}} \mbox{} \newline
+		Si introduce un nuovo strumento di analisi del corpo monodimensionale, finora infatti ci si è limitati a risolvere equilibri ricercando le proprietà di labilità e iperstaticità all'interno della struttura e poi si è andati a vedere come varino le caratteristiche della sollecitazione lungo la linea d'asse. \newline 
+		
+		Adesso, avendo introdotto con la meccanica del continuo il concetto di corpo deformabile si è disegnato un perimetro all'interno del quale muoversi, ovvero attraverso la risoluzione delle 15 equazioni del problema elastico. \newline 
+		
+		Ora si vuole ricavare, a seguito di carichi esterni e vincoli applicati, come si deforma la trave. \newline
+		
+		Dato che sono state trattate sempre travi in forma monodimensionale, collassandone la geometria 3D lungo la linea d'asse, capire come si deforma la trave si traduce nel capire come si muove nel piano la linea d'asse, che forma assume. \newline
+		
+		Il problema sarà sempre piano, ci si aspetterà quindi che la linea d'asse continui a rimanere nel piano definito $xy$ a seguito delle forze nel piano e dei momenti ortogonali applicati, ovvero la deformata continuerà ad essere contenuta nel piano originale. \newline 
+		
+		Quali sono le azioni che si prenderanno in considerazione? Quelle locali, le distorsioni localizzate o concentrate. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_02 (2)"}
+\end{figure}
+		
+		\textbf{Distorsione di Volterra}. \textit{Si definisce distorsione ogni causa deformante che non sia una forza.\newline Questa può essere concentrata o distribuita.} \newline
+		
+	Sono condizioni a priori che possiede la struttura prima che si vadano ad applicare forze esterne. \newline
+		
+		Le distorsioni concentrate si ottengono operando dei tagli sulla trave, facendo subire ai tratti degli
+		scorrimenti, rotazioni o spostamenti assiali e ricollegando le sezioni precedentemente sconnesse. 
+\newpage
+		
+\underline{\textbf{Distorsione impressa concentrata e distribuita di scorrimento}} \mbox{} \\
+
+Disallineamento della linea d'asse.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"immagini/1.PARTE8_Pagina_02"}
+\end{figure}
+	
+		Per un concio di trave di lunghezza $ \Delta z$ la distorsione è distribuita, ovvero lungo un tratto finito $\Delta z$ porta ad uno spostamento $\Delta v$:
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.2\linewidth]{"immagini/1.PARTE8_Pagina_04 (2)"}
+\end{figure}
+\[ \vartheta = \lim_{\Delta z \rightarrow 0} \dfrac{\Delta\nu}{\Delta z}\]
+		
+\underline{\textbf{	Distorsione impressa concentrata e distribuita assiale}} \mbox{} \\
+
+Allontanamento di un punto dalla porzione.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"immagini/1.PARTE8_Pagina_03 (2)"}
+\end{figure}
+
+		Per un concio di trave di lunghezza $ \Delta z$ la distorsione è distribuita, ovvero lungo un tratto finito $\Delta z$ porta ad uno spostamento $\Delta w$:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.2\linewidth]{"immagini/1.PARTE8_Pagina_04 (3)"}
+\end{figure}
+		\[ \lambda = \lim_{\Delta z \rightarrow 0} \dfrac{\Delta w}{\Delta z} \]
+\newpage	
+\underline{\textbf{	Distorsione impressa concentrata e distribuita angolare}}
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"immagini/1.PARTE8_Pagina_03"}
+\end{figure}
+		In generale la notazione con $"D"$ precede la grandezza rispetto alla quale si ha lo spostamento.\newline 
+		
+		Per un concio di trave di lunghezza $ \Delta z$ la distorsione è distribuita, ovvero lungo un tratto finito $\Delta z$ porta ad una rotazione $\Delta \varphi$ della faccia, questa misurata rispetto ad una faccia distante $\Delta z$:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.2\linewidth]{"immagini/1.PARTE8_Pagina_04"}
+\end{figure}
+		\[ \mu = \lim_{\Delta z \rightarrow 0} \dfrac{\Delta\mu}{\Delta z}\]
+		Dove $\mu$ è detta curvatura impressa. \newline 
+		
+		In generale si possono cosi porre:
+		\begin{itemize}
+			\item $v$ spostamento ortogonale alla trave
+			\item $w$ spostamento nella direzione assiale della trave
+			\item $\varphi$ rotazioni 
+		\end{itemize}
+		
+		Come si danno i segni alle distorsioni? 
+		
+		Si definiscono positive le distorsioni che fanno compiere lavoro positivo alle caratteristiche della
+		sollecitazione positive, sulla base della convenzione delle sollecitazioni.
+		
+		Le unità di misura per le distorsioni sono:
+		\[ 
+			\begin{split}
+				Dv^i & \rightarrow [L] \hspace{1cm} \vartheta \rightarrow ~ \text{numero puro} \\
+				Dw^i & \rightarrow [L] \hspace{1cm} \lambda \rightarrow ~ \text{numero puro} \\
+				D\varphi^i & \rightarrow ~ \text{numero puro} \hspace{1cm} \mu \rightarrow [L^{-1}]
+			\end{split}
+		\]
+		
+		Un tipico caso di distorsioni distribuite è quello dato dalle \textbf{\underline{dilatazioni termiche}}, ovvero degli spostameti distribuiti associati ad un'azione termica e non a forze esterne.
+		\begin{itemize}
+			\item \textbf{\underline{Salto termico uniforme in tutta la sezione.}}
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"immagini/1.PARTE8_Pagina_05"}
+\end{figure}
+
+		\[
+			\begin{split}
+				\Delta w & = \alpha\Delta T \cdot \Delta z \\
+				\lambda & = \alpha\Delta T
+			\end{split}
+		\]
+		Con $\alpha$ coefficiente di dilatazione termica.
+\newpage
+		
+		\item \textbf{\underline{Gradiente termico lineare lungo la trave o distorsione termica.}}
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"immagini/1.PARTE8_Pagina_06 (2)"}
+\end{figure}
+
+		\[
+		\begin{split}
+			\Delta\varphi & = \dfrac{2\alpha\Delta T \Delta z}{h}\\
+			\mu & = \dfrac{2\alpha\Delta T}{h}
+		\end{split}
+		\]
+		
+		\item \textbf{\underline{Generica distribuzione termica.}}
+		
+		In generale qualunque distribuzione termica può essere ricondotta alla composizione delle due distribuzioni
+		precedenti applicando il principio di sovrapposizione degli effetti.
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"immagini/1.PARTE8_Pagina_06"}
+\end{figure}
+
+		\[
+			\dfrac{\Delta T_{sup} + \Delta T_{inf}}{2} \hspace{1cm}
+			\dfrac{\Delta T_{sup} - \Delta T_{inf}}{2}
+		\] 
+		\end{itemize}
+		Oltre ad avere distorsioni concentrate e distribuite si possono avere dilatazioni e distorsioni angolari associate ai contributi di momento flettente, di sforzo normale e di  di taglio. \newline 
+		
+		Per ottenere la nuova forma assunta dalla linea d'asse (la deformata della linea d'asse) è necessario sovrapporre gli effetti di ciascuna di queste azioni. \newline 
+		
+		Essendo in regime di elasticità è possibile applicare il teorema della sovrapposizione degli effetti e ci si può calcolare il contributo di ogni caratteristica della sollecitazione e poi scrivere una forma generica. \newline
+		
+		Per cui, note le caratteristiche della sollecitazione $ N(z), T(z), M(z) $ e le distorsioni distribuite $ \lambda(z), \vartheta(z), \mu(z) $, si applichino queste una per volta e ci si avvalga alla fine del principio di sovrapposizione degli effetti.
+\newpage		
+		\begin{itemize}
+			\item \textbf{SFORZO ASSIALE} \\
+			Allungamento che genera dilatazione. 
+			
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.25\linewidth]{"immagini/1.PARTE8_Pagina_07 (2)"}
+\end{figure}
+			
+			\begin{itemize}
+			\item	Equazione di congruenza: $\varepsilon_z =\dfrac{\partial u}{\partial z} = \dfrac{\Delta w}{\Delta z}$
+			
+			\item Legame costitutivo elastico: $\sigma_z = E\varepsilon_z$
+			
+			\item Equilibrio a traslazione tra sollecitazione esterna e tensioni interne: $\int_{A}\sigma_zdA = \sigma_zA$
+			\end{itemize}
+			Allora:
+			\[ \sigma_z = \dfrac{N}{A} \hspace{0.5cm} \varepsilon_z = \dfrac{\sigma_z}{E} = \dfrac{N}{EA} \hspace{0.5cm} N=EA\varepsilon_z \hspace{0.5cm} \]
+			\[ \Delta w = \dfrac{N}{EA}\Delta z \]
+			
+			\item \textbf{DISTORSIONE $\lambda$}
+			
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.25\linewidth]{"immagini/1.PARTE8_Pagina_08 (2)"}
+\end{figure}
+			Per definizione è un'azione che genera un $w$ pari a:
+			\[ \Delta w = \lambda\Delta z\]
+\newpage			
+			\item \textbf{MOMENTO FLETTENTE}\\
+			Porterà ad una rotazione della facce pari a $\Delta\varphi$, rotazione associata al momento flettente, uguale per equilibrio. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.25\linewidth]{"immagini/1.PARTE8_Pagina_08"}
+\end{figure}
+			Essendo 
+			\[ \varepsilon_z = \dfrac{\Delta\varphi}{\Delta z}y \]
+			Sulla linea d'asse, se $r$ è il raggio di curvatura:
+			\[ \Delta z = r\Delta\varphi\] 
+			Allora:
+			\[ \varepsilon_z\dfrac{\Delta z}{2}=\dfrac{\Delta\varphi}{2}y \hspace{1cm} \sigma_z = E\dfrac{\Delta\varphi}{\Delta z} y \]
+			E quindi:
+			\[ M = \int_{A}\sigma_z y dA = E\dfrac{\Delta\varphi}{\Delta z}\int_{A} y^2 dA = EI\dfrac{\Delta\varphi}{\Delta z}\]
+			\[ \Delta\varphi = \dfrac{M}{EI}\Delta z \]
+			
+			\item \textbf{DISTORSIONE $\mu$}
+			
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.25\linewidth]{"immagini/1.PARTE8_Pagina_09 (2)"}
+\end{figure}
+			Per definizione
+			\[ \Delta\varphi = \mu\Delta z\]
+\newpage			
+			\item \textbf{SFORZO DI TAGLIO}\\
+			Per affrontare lo sforzo di taglio si può lavorare per differenti approssimazioni. 
+			
+			Per una trave monodimensionale ad asse rettilineo per cui $A\ll l$ l'azione del taglio porta a delle deformazioni molto piccole, trascurabili rispetto all'azione del momento flettente.
+			
+			\begin{enumerate}
+			\item \textbf{Ipotesi di Eulero - Bernoulli:}
+			\begin{itemize}
+				\item Una sezione piana resta piana dopo la deformazione della trave.
+				
+				Tutti i punti della sezione continuano ad essere contenuti in un unico piano.
+				
+				\item Una sezione retta resta ortogonale all’asse della trave. 
+				
+				Forma sempre 90 gradi con l'asse.
+			\end{itemize}
+			Allora sotto queste potesi non vi sono distorsioni angolari:
+			\[ \gamma = 0 \]
+			Ipotesi tanto più vera quanto più le travi sono snelle.
+			
+			\item \textbf{Ipotesi di Timoshenko:}
+			\begin{itemize}
+		    \item Una sezione piana resta piana dopo la deformazione della trave; 
+		    \item Una sezione retta non resta necessariamente ortogonale all’asse della trave
+			\end{itemize}
+			\[ T = \int_{A}\tau dA = \gamma GA' \]
+			In cui $A'$ è l'area resistente moltiplicata per un fattore di taglio. \newline 
+			
+			Più corretto da applicare per travi tozze
+			\end{enumerate}
+			
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.25\linewidth]{"immagini/1.PARTE8_Pagina_09"}
+\end{figure}
+			In generale, lo spostamento associato al taglio e piccolo, ma sempre quantificabile come:
+			\[ \Delta v = \Psi \Delta z \]
+			In cui $\Psi$ è l'angolo dell'abbassamento. \newline 
+			
+			L'azione del taglio ha così generato una distorsione angolare, una variazione di angolo rispetto alla linea d'asse.
+			\[ \Delta v = \chi \dfrac{T}{GA} \Delta z \]
+			In cui $\chi$ è il fattore di taglio, quantifica l'azione del taglio. \newline
+			
+			\item \textbf{DISTORSIONI $\vartheta$}
+			
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.25\linewidth]{"immagini/1.PARTE8_Pagina_10 (2)"}
+\end{figure}
+			Per definizione 
+			\[\Delta v = \theta\Delta z\]
+\end{itemize}
+\newpage
+
+			In questo modo sono stati riscritti tutti i contributi di spostamento associati alle caratteristiche della sollecitazione, occorre adesso riportare tutti questi termini all'interno di un set di equazioni generico. \newline 
+			
+			Per determinare la deformazione della linea d’asse della trave occorre determinare tre funzioni scalari in $ z $ ascissa curvilinea:
+			
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE8_Pagina_10"}
+\end{figure}
+
+			\[ \begin{cases} w(z) = 0 \\ v(z) = 0 \\ \varphi(z) = 0 \end{cases}\]
+			
+			Per cui una sezione posta a $z+\Delta z$ subirà spostamenti pari a:
+			\[
+				\begin{cases}
+					\begin{aligned}
+						w(z+\Delta z) & = w(z) + \dfrac{N}{EA}\Delta z + \lambda\Delta z \\
+						v(z+\Delta z) & = v(z) + \chi\dfrac{T}{GA}\Delta z + \vartheta\Delta z \\
+						\varphi(z+\Delta z) & = \varphi(z) + \dfrac{M}{EI}\Delta z + \mu\Delta z \\
+					\end{aligned}	
+				\end{cases}
+			\]
+			In cui, in generale, si possono individuare, ad esempio prendendo la rotazione:
+			\begin{itemize}
+				\item $ \varphi(z) $ spostamento della sezione $z$.
+				\item $\dfrac{M}{EI}\Delta z + \mu\Delta z$ contributo di spostamento dovuto alla sollecitazione del tratto di interesse $z+\Delta z$. 
+				\item $\mu\Delta z$ contributo di distorsione.
+			\end{itemize}
+		
+			Nella seconda equazione però manca qualcosa, infatti a seguito della traslazione verticale ci sarà sempre una rotazione della linea d'asse. \newline 
+			
+			Uno spostamento $v$ dell'estremo posto a $z+\Delta z$ genera una rotazione rispetto al punto sulla linea d'asse posto a quota $z$. \newline 
+			
+			Il termine che dovrà essere aggiunto a questa equazione è:
+				\[ \Delta v = -\varphi\Delta z \]
+			Poiché $\varphi$ segue la terna destrorsa, la sua rotazione è antioraria e dunque positiva, ma allo sesso modo, se il concio si alza, il suo spostamento verso l'alto sarà discorde alla terna $w, v, \varphi$ imposta quale lezione addietro per cui sarà negativo. 			
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE8_Pagina_11"}
+\end{figure}
+			In questo modo alla seconda equazione si aggiunge un contributo di rotazione rigida:
+			\[
+				\begin{cases}
+						\begin{aligned}
+							w(z+\Delta z) & = w(z) + \dfrac{N}{EA}\Delta z + \lambda\Delta z \\
+							v(z+\Delta z) & = v(z) + \chi\dfrac{T}{GA}\Delta z +\vartheta\Delta z- \varphi\Delta z \\
+							\varphi(z+\Delta z) & = \varphi(z) + \dfrac{M}{EI}\Delta z + \mu\Delta z \\
+						\end{aligned}	
+				\end{cases}
+			\]	
+		Si portino adesso le funzioni spostamento a sinistra dell'uguale e si divida per $\Delta z$, come fatto a suo tempo per le equazioni indefinite di equilibrio.  
+		\[
+		\begin{cases}
+			\begin{aligned}
+				\dfrac{w(z+\Delta z)- w(z)}{\Delta z} & = \dfrac{N}{EA} + \lambda \\
+				\dfrac{v(z+\Delta z) -v(z)}{\Delta z} & = \chi\dfrac{T}{GA} +\vartheta - \varphi \\
+				\dfrac{\varphi(z+\Delta z) -\varphi(z)}{\Delta z} & = \dfrac{M}{EI} + \mu \\
+			\end{aligned}	
+		\end{cases}
+		\]
+		Per $ \Delta z \rightarrow 0 $	si ottengono le \newline
+		
+		\begin{center}
+			\textbf{EQUAZIONI INDEFINITE DELLA LINEA ELASTICA PER LE TRAVI AD ASSE RETTILINEO}	 \newline 
+		\end{center}
+	
+		Attraverso l'integrazione di queste formulazioni si ottengono $w, v, \varphi$, ovvero la forma che assume una trave a seguito dell'azione sia delle caratteristiche della sollecitazione che delle distorsioni distribuite.  
+		\[
+		\begin{cases}
+			\begin{aligned}
+				w'(z) & =   \dfrac{N}{EA} + \lambda \\
+				v'(z) & = \chi\dfrac{T}{GA} +\vartheta- \varphi \\
+				\varphi'(z) & =  \dfrac{M}{EI} + \mu \\
+			\end{aligned}	
+		\end{cases}
+		\]
+\newpage		
+		\textbf{Esempio: trave incastrata a mensola} 
+		
+		Della trave di lunghezza $ l $ si vogliono conoscere le funzioni spostamento in B.
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE8_Pagina_13 (2)"}
+\end{figure}
+		
+		Si determino per prima cosa le caratteristiche della sollecitazione, questo è l'unico grosso limite alla risoluzione della linea elastica, si passa sempre attraverso le caratteristiche della sollecitazione:
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE8_Pagina_13"}
+\end{figure}
+		In più non ci sono distorsioni distribuite.
+		\[
+		\begin{cases}
+			N(z) = 0 \\
+			T(z) = F \\
+			M(z) = -F(l-z)
+		\end{cases} \hspace{0.5cm} 
+		\begin{cases}
+			\lambda(z) = 0 \\
+			\vartheta(z)= 0 \\
+			\mu(z) = 0
+		\end{cases} \hspace{0.5cm} 
+		\begin{cases}
+			\begin{aligned}
+				w'(z) & = 0 \\
+				v'(z) & = \chi\dfrac{F}{GA} -\varphi \\
+				\varphi'(z) & = -\dfrac{F(l-z)}{EI}
+			\end{aligned}
+		\end{cases}
+		\]
+		Le equazioni della linea elastica integrate direttamente e con l'imposizione delle condizioni al contorno danno:
+		\[ 
+		\begin{cases}
+			\begin{aligned}
+				w(z) & = C_1 \\
+				\varphi(z) & = -\dfrac{Fl}{EI}z + \dfrac{F}{EI} \dfrac{z^2}{2} +C_2\\
+				v(z) & = \chi\dfrac{F}{GA}z + \dfrac{Fl}{EI} \dfrac{z^2}{2}  - \dfrac{F}{EI} \dfrac{z^3}{6} -C_2z + C_3 			
+			\end{aligned}
+		\end{cases}
+		\]
+		Le condizioni al contorno, applicate su spostamenti e rotazioni, sono dettate dai vincoli che impongono restrizioni cinematiche, per cui: 
+		\[ v(0) = 0 \hspace{1cm} w(0) = 0 \hspace{1cm} \varphi(0) = 0 \]
+		Da cui si ottiene:
+		\[ C_1 = 0 \hspace{1cm} C_2 = 0 \hspace{1cm} C_3 = 0 \]
+		E perciò:
+		\[ 
+		\begin{cases}
+			\begin{aligned}
+				w(z) & = 0 \\
+				\varphi(z) & = -\dfrac{Fl}{EI}z + \dfrac{F}{EI} \dfrac{z^2}{2} \\
+				v(z) & = \chi\dfrac{F}{GA}z + \dfrac{Fl}{EI} \dfrac{z^2}{2}  - \dfrac{F}{EI} \dfrac{z^3}{6}  				
+			\end{aligned}
+		\end{cases}
+		\]
+		Si è anche in grado di plottare come si deforma la linea d'asse. \newline 
+		
+		E all'estremità della trave si avrà: 
+		\[ 
+		\begin{cases}
+			\begin{aligned}
+				w(l) & =  0\\
+				\varphi(l) & = -\dfrac{Fl}{EI}l + \dfrac{F}{EI} \dfrac{l^2}{2} =- \dfrac{Fl^2}{2EI}\\
+				v(l) & = \chi\dfrac{F}{GA}l + \dfrac{Fl}{EI} \dfrac{l^2}{2}  - \dfrac{F}{EI} \dfrac{l^3}{6} = \dfrac{Fl^3}{3EI} + \chi\dfrac{Fl}{GA}				
+			\end{aligned}
+		\end{cases}
+		\]
+		Se si considerasse valida l’ipotesi di Eulero-Bernoulli, trascurando ovvero la deformabilità tagliante, il contributo
+		del taglio alla deformazione è nullo:
+		\[ v(z) = \chi\dfrac{F}{GA}z + \dfrac{Fl}{EI} \dfrac{z^2}{2} - \dfrac{F}{EI} \dfrac{z^3}{6} \Rightarrow v(z) = \dfrac{Fl}{EI} \dfrac{z^2}{2} - \dfrac{F}{EI} \dfrac{z^3}{6} \]
+		\[ v(l) = \dfrac{Fl^3}{3EI} \]
+		Essendo in questo caso lo spostamento inferiore, la trave di Eulero risulterà più rigida.\newline 
+		
+		Rapportando invece gli spostamenti ottenuti considerando la deformabilità a taglio (T) e senza (ST) si ottiene un fattore di forma $\rho$:
+		\[\dfrac{v(l)^{(T)}}{v(l)^{(ST)}} = 1 + \chi\dfrac{Fl}{GA}\dfrac{3EI}{Fl^3} = 1+ \chi\dfrac{3E}{G} \left( \dfrac{\rho}{l}\right)^2 \]
+		Dove: 
+		\[ \rho^2 = \dfrac{I}{A} \]
+		Vuol dire che per travi snelle, ovvero quelle per cui risulta:
+		\[\dfrac{h}{l} < \dfrac{1}{10} \hspace{1cm} \left( \dfrac{\rho}{l}\right)^2 \approx \dfrac{1}{400} \]
+		La deformazione dovuta al taglio è trascurabile. \newline 
+\newpage		
+{\Large \textbf{Dilatazioni Termiche}} \mbox{} \newline
+		Caso in cui su una struttura appoggio-appoggio vi sia applicato un gradiente di temperatura lungo lo spessore della trave. \newline 
+		
+		Si ricavino la rotazione sul carrello e
+		l’abbassamento in mezzeria della seguente struttura. \newline 
+		
+		Non si vedono però nè reazioni vincolari, nè forze esterne.
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.2\linewidth]{"immagini/1.PARTE8_Pagina_17"}
+\end{figure}
+		Ci si trova di fronte ad una situazione di equilibrio banale, dato che la struttura è isostatica e ammette una sola soluzione di equilibrio, se il tratto è scarico la soluzione nulla è l'unica soluzione ammessa. \newline 
+		
+		Ci si trova di fronte ad una situazione per cui a fronte di una distorsione distribuita la struttura risulta perfettamente scarica. \newline 
+		
+		\[
+		\begin{cases}
+			N(z) = 0 \\
+			T(z) = 0 \\
+			M(z) = 0
+		\end{cases} \]
+		Le distorsioni sulle strutture non iperstatiche (in
+		particolare isostatiche) non forniscono
+		caratteristiche della sollecitazione né reazioni
+		vincolari.
+		\[
+		\begin{cases}
+			\begin{aligned}
+				w'(z) & = 0 \\
+				v'(z) & = -\varphi \\
+				\varphi'(z) & =\mu = \dfrac{2\alpha\Delta T}{h}
+			\end{aligned}
+		\end{cases} \hspace{0.5cm}
+		\begin{cases}
+			v(0) = 0 \\
+			w(0) = 0 \\
+			v(l) = 0
+		\end{cases} \hspace{0.5cm}
+		\begin{cases}
+			\begin{aligned}
+				w(z) & = 0 \\
+				v(z) & = -\dfrac{\alpha\Delta T}{h}z^2 + \dfrac{\alpha\Delta Tl}{h} z \\
+				\varphi(z) & = \dfrac{2\alpha\Delta T}{h}z - \dfrac{\alpha\Delta Tl}{h} \\			
+			\end{aligned}
+		\end{cases}
+		\]
+		Dal punto di vista degli spostamenti il discorso è però diverso, infatti risolvendo le equazioni indefinite della linea elastica, queste portano a:
+		\[ \varphi_(A) = \varphi(0) = - \dfrac{\alpha\Delta Tl}{h} \]
+		\[ v_(C) = v(\dfrac{l}{2}) = -\dfrac{\alpha\Delta T}{h}\dfrac{l^2}{4} + \dfrac{\alpha\Delta Tl}{h} \dfrac{l}{2} = \dfrac{\alpha\Delta T}{h} \dfrac{l^2}{4} \]
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.2\linewidth]{"immagini/1.PARTE8_Pagina_18"}
+\end{figure}
+
+		Vuol dire che a seguito di una distorsione termica lungo lo spessore, la trave assume una linea d'asse ad arco di parabola, le fibre inferiori si allungano e quelle superiori di accorciano/comprimono, vuol dire che se si ha una trave montata con dei vincoli che garantiscano la non iperstaticità e quindi l'isostaticità, la struttura soggetta a gradiente subisce una deformazione, esistono dei campo di spostamento, ma nè si trazione nè si sollecita. \newline 
+		
+		Si è di fronte ad una struttura deformata ma non sollecitata. 
+\newpage
+{\Large \textbf{Cedimenti Impressi Vincolari Anelastici}} \mbox{} \newline
+		Anche i vincoli possono essere soggetti a cedimenti.
+		
+		Come visto in precedenza, i cedimenti si esplicano nell’ambito delle limitazioni cinematiche che il
+		vincolo produce.
+		
+		Ogni vincolo può cedere con uno spostamento di cedimento duale all’azione che esercita.
+		
+		Qualora il cedimento sia indipendente dalle azioni esterne, esso si dirà anelastico.
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"immagini/1.PARTE8_Pagina_19"}
+\end{figure}
+
+		\[ \varphi_B = \varphi_B' + \varphi_B'' = \dfrac{\delta}{l} - \dfrac{Ml}{3EI}\]
+		
+{\Large \textbf{Composizione cinematica degli spostamenti}} \mbox{} \newline
+		Il metodo della composizione cinematica degli spostamenti ha valenza generale, rimuovendo il limite
+		di asse rettilineo. \newline 
+	
+		Ad esempio, in una struttura del genere, quanto valgono $v_C$ e $\varphi_C$? 
+	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE8_Pagina_20"}
+\end{figure}
+\newpage
+		\underline{Punto 1: considero AB rigido}
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE8_Pagina_21 (2)"}
+\end{figure}
+
+		\[ \varphi_B^+ = \varphi_B^- \hspace{1cm} \varphi_B^- = 0 \]
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE8_Pagina_21 (3)"}
+\end{figure}
+
+		\[ v_C' = \dfrac{ql^4}{8EI} \hspace{1cm} \varphi_C'= -\dfrac{ql^3}{6EI}\]
+		Il carico agente sulla parte rigida viene trasferito sul
+		dominio deformabile mediante trasporto delle forze. \newline 
+		
+		\underline{Punto 2: considero BC rigido}
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE8_Pagina_21 (4)"}
+\end{figure}
+		
+		\[ \varphi_B^- = \varphi_B^+ = \varphi^{BC} \hspace{0.5cm} v_C = -l\varphi^{BC} \hspace{0.5cm} \varphi_C- = \varphi^{BC}  \]
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE8_Pagina_21 (5)"}
+\end{figure}
+
+		\[ \varphi_B = \varphi_B^{cont} + \varphi_B^q = \dfrac{ql^2}{2} \dfrac{l}{3EI} + \dfrac{ql^3}{24EI} =- \dfrac{ql^3}{8EI} \]
+		\[ v_C'' = \dfrac{ql^4}{8EI} \hspace{1cm}  \varphi_C'' = \dfrac{ql^3}{8EI}\]
+		
+		Infine 
+		
+		\[ \varphi_C = \varphi_C' + \varphi_C'' = -\dfrac{ql^3}{6EI} - \dfrac{ql^3}{8EI} = -\dfrac{7ql^3}{24EI}  \]
+		\[ v_C = v_C' + v_C'' = \dfrac{ql^4}{8EI} + \dfrac{ql^4}{8EI} = \dfrac{ql^4}{4EI} \]
+\newpage		
+		Ed in una struttura del genere invece quali sarebbero $v_C, \varphi_C$ e $w_C$? 
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE8_Pagina_22 (2)"}
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE8_Pagina_22 (3)"}
+\end{figure}
+
+		\underline{Punto 1: Considero AB rigido}
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE8_Pagina_22"}
+\end{figure}
+
+		\[
+		\begin{cases}
+			\begin{aligned}
+				v_C'& = \dfrac{Fl^3}{3EI} \\
+				w_C'& = \dfrac{Fl}{EA} \\
+				\varphi_C'& = -\dfrac{Fl^2}{2EI}
+			\end{aligned}
+		\end{cases}
+		\]
+		
+		\underline{Punto 2: Considero BC rigido}
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE8_Pagina_23"}
+\end{figure}
+
+		\[
+		\begin{cases}
+			\begin{aligned}
+				v_B''& = \dfrac{Fl}{EA} \\
+				w_B''& = \dfrac{Fl^3}{3EI} + \dfrac{Fl^3}{2EI}  \\
+				\varphi_B''& = -\dfrac{Fl^2}{2EI} -\dfrac{Fl^2}{EI}
+			\end{aligned}
+		\end{cases}
+		\]
+		\[ s_C'' = s_B'' +\varphi_B'' \times (C-B) \]
+		\[
+		\begin{cases}
+			\begin{aligned}
+				v_C''& = v_B'' - l\varphi_B'' =  \dfrac{Fl}{EA} + \dfrac{3Fl^3}{2EI}\\
+				w_C''& = w_B'' =  \dfrac{5Fl^3}{6EI}   \\
+				\varphi_C''& = \varphi_B'' =  -\dfrac{3Fl^2}{2EI}  
+			\end{aligned}
+		\end{cases}
+		\]
+		Allora:
+		\[
+		\begin{cases}
+			\begin{aligned}
+				v_C& = v_c' +v_C'' =  \dfrac{11Fl^3}{6EI} + \dfrac{Fl}{EA}\\
+				w_C& = w_C' + w_C'' = \dfrac{Fl}{EA} + \dfrac{5Fl^3}{6EI}   \\
+				\varphi_C& = \varphi_C' + \varphi_C'' =  -\dfrac{2Fl^2}{EI}  
+			\end{aligned}
+		\end{cases}
+		\]
+\newpage		
+{\Large \textbf{Servibilità di una struttura}} \mbox{} \newline
+		A che serve valutare la deformata della linea d'asse? Questa è sostanzialmente una delle primissime verifiche che si esegue su di una struttura, sia in ambito civile che meccanico si dovranno verificare sia la resistenza che la funzionalità. \newline 
+		
+		Un oggetto meccanico assimilabile ad una trave è l'albero di trasmissione; mentre lavora si deve fare in modo che non subisca spostamenti eccessivi, perché in caso si avessero gli organi calettati non lavorerebbero correttamente.\newline 
+		
+		Quindi in fase di progetto oltre a garantire la resistenza del materiale si deve garantire un campo di spostamenti tale da rendere sempre funzionali gli organi calettati. \newline
+		
+		La deformabilità di una struttura è uno dei parametri di progetto da considerare nel dimensionamento
+		della stessa. \newline
+		
+		La deformabilità misura in termini di
+		\textbf{freccia}, ovvero di inflessione a pieno carico. \newline
+		
+		Una deformabilità eccessiva della struttura (freccia troppo elevata) non è
+		accettabile.\newline 
+		
+		L’ordine di grandezza ammissibile del rapporto freccia/luce è fornito dalle normative di legge vigenti:
+		\[
+			\begin{cases}
+				\begin{aligned}
+					& \dfrac{f}{l} \le \dfrac{1}{500}	\rightarrow ~ \text{Struttura molto rigida} \\
+					\dfrac{1}{500} \le & \dfrac{f}{l} < \dfrac{1}{300} \rightarrow ~ \text{Struttura rigida} \\
+					\dfrac{1}{300} \le & \dfrac{f}{l} < \dfrac{1}{150}	\rightarrow ~ \text{Struttura deformabile} \\
+					& \dfrac{f}{l} \ge \dfrac{1}{150}	\rightarrow ~ \text{Deformabilità non accettabile} \\
+				\end{aligned}
+			\end{cases}
+		\]
+		
+{\Large \textbf{Casi Notevoli}} \mbox{} \newline
+		In questo esempio si vogliono determinare le seguenti grandezza da una struttura appoggio - appoggio: $f, \varphi_A, \varphi_B$.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_25 (2)"}
+\end{figure}
+
+		\[
+		\begin{cases}			
+				N = 0\\
+				T = q(l-z) - q\dfrac{l}{2} = q\left( \dfrac{l}{2} - z\right)  \\
+				M = - \dfrac{q(l-z)^2}{2} + q\dfrac{l}{2}(l-z) = \dfrac{q}{2}(lz -z^2)		
+		\end{cases}
+		\]
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_25"}
+\end{figure}
+
+		\[
+		\begin{cases}
+			\begin{aligned}
+				w'(z)& = \dfrac{N}{EA} = 0 \\
+				\varphi'(z)& = \dfrac{M}{EI} = \dfrac{q}{2EI}(lz -z^2) \\
+				v'(z)& = -\varphi 				
+			\end{aligned}
+		\end{cases}
+		\]
+		Integrando: 
+		\[
+		\begin{cases}
+			\begin{aligned}
+				w(z)& = C_1 \\
+				\varphi(z)& = \dfrac{ql}{4EI}z^2 - \dfrac{q}{6EI}z^3 + C_2 \\
+				v'(z)& = -\dfrac{ql}{12EI}z^3 + \dfrac{q}{24EI}z^4 - C_2z +C_3				
+			\end{aligned}
+		\end{cases}
+		\]
+		Con le Seguenti condizioni al contorno: 
+		\[ w(0) = 0 \hspace{0.5cm} v(0) = 0 \hspace{0.5cm} v(l) = 0\]
+		Si ottiene:
+		\[
+		\begin{cases}
+			\begin{aligned}
+				w(z)& = 0 \\
+				\varphi(z)& = \dfrac{ql}{4EI}z^2 - \dfrac{q}{6EI}z^3 - \dfrac{ql^3}{24EI} \\
+				v'(z)& = -\dfrac{ql}{12EI}z^3 + \dfrac{q}{24EI}z^4 + \dfrac{ql^3}{24EI}z 			
+			\end{aligned}
+		\end{cases}
+		\]
+		Si può dunque rispondere alla richiesta iniziale: 
+		\[
+		\begin{cases}
+			\begin{aligned}
+				\varphi_A & = - \dfrac{ql^3}{24EI} \\
+				\varphi_B & =  \dfrac{ql^3}{24EI} \\
+				f = v_c & = \dfrac{5}{384}	\dfrac{ql^4}{EI}			
+			\end{aligned}
+		\end{cases}
+		\]
+		Per cui, fornendo dei dati: 
+		\[ m_{trave} = 50 ~ kg/m; \hspace{0.2cm} m_{carichi} = 500 ~ kg/m; \hspace{0.2cm} l_{trave} = 10m; \hspace{0.2cm} I = 5790 \cdot 10^{-8} ~ m^4; \hspace{0.2cm} E = 210 ~ GPa \]
+		Si ottiene:
+		\[ f = 0.06 ~ m \Rightarrow \dfrac{f}{l} = \dfrac{1}{170}\]
+\newpage		
+{\Large \textbf{Equazioni del IV ordine della linea elastica}} \mbox{} \newline
+		Le equazioni indefinite della linea elastica richiedono però a priori di conoscere le caratteristiche della sollecitazione, ricavabili sono attraverso la soluzione delle equazioni indefinite di equilibrio.\newline 
+		
+		
+		Equazioni Indefinite di Equilibrio
+		\[
+		\begin{cases}
+				N'= -p \\
+				M'= T - m \\
+				T' = -q
+		\end{cases}
+		\]
+		
+		Equazioni indefinite della linea elastica
+		\[
+		\begin{cases}
+			\begin{aligned}
+				w'(z) & =   \dfrac{N}{EA} + \lambda \\
+				v'(z) & = \chi\dfrac{T}{GA} +\vartheta- \varphi \\
+				\varphi'(z) & =  \dfrac{M}{EI} + \mu \\
+			\end{aligned}	
+		\end{cases}
+		\]
+		Cosa succederebbe se si provasse a unire queste relazioni e a cercare una formulazione unica che risolva le due tipologie di equazioni indefinite? \newline
+		Sotto le ipotesi di:
+		
+	\begin{itemize}
+		\item Indeformabilità a taglio;
+		
+		\item Distorsioni $\vartheta$ nulle; 
+	\end{itemize}
+		
+		Si ottiene dalla terza equazione elastica:
+		\[	v'(z) = \cancel{\chi\dfrac{T}{GA}} +\cancel{\vartheta}- \varphi = -\varphi \Rightarrow v''(z)  = -\varphi' = -\dfrac{M}{EI} - \mu \] 
+		Per cui:
+		\[M = -EI(v'' +\mu)\] 
+		E similmente per la prima equazione elastica si ottiene:
+		\[N = EA(w'-\lambda)\]
+		E allora 
+		\[\begin{cases}
+			N = EA(w'-\lambda) \\
+			M = -EI(v'' +\mu) 
+		\end{cases}\] 
+		Che sostituite nelle equazioni di equilibrio divengono
+		\[
+		\begin{cases}
+			N'= [EA(w'-\lambda)]'= -p \\
+			M'= [-EI(v'' +\mu)]'= T - m \\
+		\end{cases}
+		\]
+		Come ricavare $T'$? \newline 
+		
+		Dall'ultima equazione di equilibrio scritta:
+		\[ [-EI(v'' +\mu)]'= T - m \Rightarrow T = [-EI(v'' +\mu)]' + m \]
+		E quindi 
+		\[T' = [-EI(v'' +\mu)]'' + m'\]
+		E le equazioni di equilibrio si completano:
+		\[
+		\begin{cases}
+			N'= [EA(w'-\lambda)]'= -p \\
+			M'= [-EI(v'' +\mu)]'= T - m \\
+			T' = [-EI(v'' +\mu)]'' + m' = -q
+		\end{cases}
+		\]
+		In questo modo si sono ottenute le equazioni indefinite di equilibrio espresse attraverso le equazioni indefinite della linea elastica, ovvero essendo 
+		\[\begin{cases}
+		N = EA(w'-\lambda) \\
+		M = -EI(v'' +\mu) \\
+		T = [-EI(v'' +\mu)]' + m
+		\end{cases}\]
+		Derivandole si ottengono le\textbf{ EQUAZIONI DEL IV ORDINE DELLA LINEA ELASTICA}
+		\[
+		\begin{cases}
+			N'= [EA(w'-\lambda)]'= -p \\
+			M'= [-EI(v'' +\mu)]'= T - m \\
+			T' = [-EI(v'' +\mu)]'' + m' = -q
+		\end{cases}
+		\]
+	
+		
+		
+		Caso particolare con distorsioni, momento distribuito nulli e assenza di distribuzioni termiche. 
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_35"}
+\end{figure}
+		Essendo
+		\[ \lambda = \mu = m = 0 \]
+		Le equazione del IV ordine della linea elastica divengono:
+		\[
+		\begin{cases}
+			N'= [EA(w'-\cancel{\lambda})]'= -p \\
+			M'= [-EI(v'' +\cancel{\mu})]'= T - \cancel{m} \\
+			T' = [-EI(v'' +\cancel{\mu})]'' + \cancel{m'} = -q
+		\end{cases}
+		\]
+		\[
+		\begin{cases}
+			N'= [EAw']'= -P \\
+			M'= [-EIv'']'= T  \\
+			T' = [-EIv'']'' = -q
+		\end{cases}
+		\]
+		Essendo $ M'=T $ ovvero $ T'= M'' $ basta risolvere:
+		\[
+		\begin{cases}
+				T' = EIv'''' = q \\
+				N' = EAw'' = -p
+		\end{cases} \]
+		E quindi
+		 \[ \begin{cases}
+				N = EAw'\\
+				M = -EIv'' \\
+				T = -EIv'''
+			\end{cases}
+		\]
+		Il problema elastico è totalmente risolto. \newline 
+		
+		Le condizioni al contorno per $ v  $ possono essere
+		applicate su:
+		\begin{itemize}
+			
+		\item Rotazioni
+		
+		\item Spostamenti
+		
+		\item Taglio
+		
+		\item Momento
+		\end{itemize}
+		
+		Servono 4 condizioni al contorno su $ v $ e 2 su $ w $, tutte fornite dai vincoli esterni.
+		
+		\[ M_A = 0; \hspace{0.2cm} v_A = 0; \hspace{0.2cm} w_A = 0; \hspace{0.2cm} M_B = M; \hspace{0.2cm} v_B = 0; \hspace{0.2cm} N_B = 0\]
+		\[
+		\begin{cases}
+			Elv'''' = q = 0 \Rightarrow Elv'''=C_1 \Rightarrow Elv'' = C_1 z + C_3 \Rightarrow Elv'= C_1\dfrac{z^2}{2} + C_3z + C_5 \\
+			EAw'' = -p =0 \Rightarrow EAw' =C_2 \Rightarrow EAw = C_2z + C_4
+		\end{cases} \]
+		\[
+		\begin{cases}
+			v = \dfrac{1}{EI}\left( C_1\dfrac{z^3}{6} + C_3\dfrac{z^2}{2} + C_5z + C_6 \right) \\
+			w = \dfrac{1}{EA} (C_2z + C_4)
+		\end{cases}
+		\]
+		Applicando le condizioni al contorno: 
+		\[ \begin{split}
+					v_A & = 0 \Rightarrow v(0) = 0 \Rightarrow C_6 = 0 \\
+					w_A & = 0 \Rightarrow w(0) = 0 \Rightarrow C_4 = 0 \\
+					M_A & = 0 \Rightarrow Elv''(0) = 0 \Rightarrow v''(0) = 0 \Rightarrow C_3 = 0 \\
+					v_B & = 0 \Rightarrow v(l) = 0 \Rightarrow \dfrac{C_1l^3}{6EI} + \dfrac{C_5l}{EI} = 0 \Rightarrow C_5 = \dfrac{C_1l^2}{6} \\
+					M_B & = M \Rightarrow Elv''(l) = M \Rightarrow v''(l) = -\dfrac{M}{EI} \Rightarrow \dfrac{C_1l}{EI} = -\dfrac{M}{EI} \Rightarrow C_1 = -\dfrac{M}{l} \\
+					N_B & = 0 \Rightarrow EAw'(l) = 0 \Rightarrow w'(0) = 0 \Rightarrow C_2 = 0 \\					
+		\end{split}
+		\]
+		E così:
+		\[
+		\begin{cases}
+			v(z) =  -\dfrac{M}{l}\dfrac{z^3}{6EI}  + \dfrac{Ml}{6EI}z  \\
+			w(z) = 0
+		\end{cases} \hspace{1cm} \begin{cases}
+				N = EAw'= 0 \\
+				M = -EIv'' = \dfrac{M}{l}z \\
+				T = -EIv'' = \dfrac{M}{l}
+			\end{cases}
+		\]
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_37"}
+\end{figure}
+
+		Questo metodo risulta però di scarsa utilità per la risoluzione di strutture isostatiche, in queste strutture risulta immediato risolvere il problema statico determinando le reazioni vincolari e calcolando le risultanti.
+		
+		Diventa tuttavia fondamentale per la risoluzione di quelle strutture iperstatiche nelle quali, per definizione, le reazioni sono
+		determinabili a meno di «i» parametri. \newline 
+		
+		
+		Abbiamo legato le caratteristiche della sollecitazione agli spostamenti e si è imposto il legame costitutivo e la congruenza, in pratica si sta risolvendo il problema elastico. 
+		
+		Per risolvere la struttura con le caratteristiche della sollecitazione, le equazioni indefinite di equilibrio e della linea elastica, la struttura doveva essere non iperstatica, era un approccio limitato dalla registrazione e vaffanculo
+		
+		
+\newpage		
+{\Large \textbf{Strutture iperstatiche – Equilibrio}} \mbox{} \newline
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_38 (2)"}
+\end{figure}
+
+		\[ l = 0 \hspace{0.2cm} \begin{cases}
+		t = 1 \\
+		s = 4
+		\end{cases} \Rightarrow 3t - s = -1 \Rightarrow i =1\]	
+		La struttura è iperstatica, non si è in grado di tracciare i diagrammi delle sollecitazioni.
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_38"}
+\end{figure}
+
+		\[
+		\begin{split}
+			H_A & = 0 \\
+			R_A + R_B & = 0 \\
+			M_A + M -R_Bl & = 0
+		\end{split}
+		\]
+		\[
+		\left[ \begin{array}{c}
+			H_A \\
+			R_A \\
+			M_A \\
+			R_B
+		\end{array}\right] = \left[ \begin{array}{c}
+		0 \\
+		0 \\
+		-M \\
+		0
+		\end{array}\right] + R_B \left[ \begin{array}{c}
+		0 \\
+		-1 \\
+		l \\
+		1
+		\end{array}\right] \hspace{1cm} \begin{cases}
+		N(z) = 0 \\
+		T(z) = R_B \\
+		M(z) = M - R_B(l-z)
+		\end{cases}
+		\]
+{\Large \textbf{Strutture iperstatiche – Caratteristiche della \\ sollecitazione}} \mbox{} \newline
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{"immagini/1.PARTE8_Pagina_39"}
+\end{figure}
+
+{\Large \textbf{Strutture iperstatiche – Equazioni del IV ordine}} \mbox{} \newline
+		Per la stessa struttura, si ricorre alle equazioni del quarto ordine:
+		\[Elv'''' = 0\]
+		\[v = \dfrac{1}{EI}\left( C_1\dfrac{z^3}{6} + C_2\dfrac{z^2}{2} + C_3z + C_4 \right) \]
+		Applico le condizioni al contorno: 
+		\[ \begin{split}
+			v_A & = 0 \Rightarrow v(0) = 0 \Rightarrow C_4 = 0 \\
+			\varphi_A & = 0 \Rightarrow -v'(0) = 0 \Rightarrow C_3 = 0 \\
+			v_B & = 0 \Rightarrow v(l) = 0 \Rightarrow \dfrac{C_1l^3}{6EI} + \dfrac{C_2l^2}{2EI} = 0 \Rightarrow C_2 = -\dfrac{C_1l}{3} \\
+			M_B & = M \Rightarrow Elv''(l) = M \Rightarrow v''(l) = -\dfrac{M}{EI} \Rightarrow \dfrac{C_1l}{EI} + \dfrac{C_2}{EI} = -\dfrac{M}{EI} \Rightarrow C_1l + C_2 = -M \\
+			N_B & = 0 \Rightarrow EAw'(l) = 0 \Rightarrow w'(0) = 0 \Rightarrow C_2 = 0 \\					
+		\end{split}
+		\]
+		E quindi:
+		\[
+		\begin{cases}
+			v(z) =  \dfrac{1}{EI}\left( -\dfrac{Mz^3}{4l}  + \dfrac{Mz^2}{4} \right)  \\
+			\varphi(z) = \dfrac{1}{EI}\left( -\dfrac{Mz^2}{4l}  + \dfrac{Mz}{2} \right)
+		\end{cases} \hspace{1cm} \begin{cases}
+			M(z) = -EIv'' = M\left( \dfrac{3z}{2l} - \dfrac{1}{2}\right)  \\
+			T = -EIv'' = \dfrac{3}{2}\dfrac{M}{l}
+		\end{cases}
+		\]
+		Si confrontino ora i risultati ottenuti dalle equazioni cardinali:
+		\[
+			\begin{cases}
+				T(z) = R_B \\
+				M(z) = M - R_B(l-z)
+			\end{cases}
+		\]
+		Per cui: 
+		\[ R_B = \dfrac{3}{2}\dfrac{M}{l} \]
+		Le equazioni della linea elastica permettono così di determinare la reazione vincolare in B.
+		
+		In generale, le equazioni della linea elastica offrono più informazioni delle sole equazioni cardinali in
+		quanto contengono sia le condizioni di congruenza che il legame costitutivo che hanno permesso di trattare
+		i corpi deformabili. \newline 
+		
+{\Large \textbf{Strutture iperstatiche – Metodo delle Forze}} \mbox{} \newline
+ 		Lo stesso problema iperstatico può essere risolto in maniera diversa. 
+ 		
+ 		Si riproponga ancora una volta la stessa struttura:
+ 		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_42 (2)"}
+\end{figure} 
+
+		Dalla statica si è visto che la soluzione ottenibile è 
+		 funzione di un parametro $ R_B $ (
+		o anche $ R_A $ o $ M_A $).
+		
+		Scelta la reazione in B come il parametro descrivente la soluzione, si può definire un sistema del
+		tipo:
+ 		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_42 (3)"}
+\end{figure}
+
+		Che sarà equivalente a quello di partenza se, considerando la reazione come un’incognita, sia
+		soddisfatta l’equazione di congruenza:
+		\[v_B = 0\]
+		Per sovrapposizione degli effetti:
+		\[ v_B^{(a)} = -\dfrac{Ml^2}{2EI} \hspace{2cm} v_B^{(b)} = \dfrac{R_Bl^3}{3EI}  \]
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"immagini/1.PARTE8_Pagina_42"}
+\end{figure} 
+
+		\[ v_B = v_B^{(a)}v_B^{(b)} = 0 \Rightarrow -\dfrac{Ml^2}{2EI} + \dfrac{R_Bl^3}{3EI} = 0 \Rightarrow R_B = \dfrac{3}{2}\dfrac{M}{l} \]
+		
+		Perché altre soluzioni per la reazione vincolare in B non sono ammissibili?
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_43 (2)"}
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_43"}
+\end{figure} 
+
+		Se si immaginasse una soluzione differente per la reazione vincolare in B, tipo $R_B = \dfrac{M}{l}$
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_44 (2)"}
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_44"}
+\end{figure}
+
+		Questa non sarebbe compatibile con la congruenza: $v_B = -\dfrac{Ml^2}{6EI} \ne 0$, assurdo! \newline 
+\newpage		
+		Attraverso il metodo delle forze, quindi, per una struttura iperstatica in una classe infinita di diagrammi
+		equilibrati, si identifica l’unico sistema congruente.
+		
+		La scelta del parametro descrivente la soluzione è ininfluente sulla soluzione finale, a patto di
+		garantire la labilità nulla del sistema.
+		
+		Se si cambia il parametro infatti:
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_45 (2)"}	
+\end{figure}
+
+			\[
+		\left[ \begin{array}{c}
+			H_A \\
+			R_A \\
+			M_A \\
+			R_B
+		\end{array}\right] = \left[ \begin{array}{c}
+			0 \\
+			-M/l\\
+			0 \\
+			M/l
+		\end{array}\right] + M_A \left[ \begin{array}{c}
+			0 \\
+			-1/l \\
+			l \\
+			1/l
+		\end{array}\right] \]
+		\[
+			\varphi_A = 0 \Rightarrow \varphi_A = -\dfrac{Ml}{6EI} + \dfrac{M_Al}{3EI} \Rightarrow M_A = \dfrac{M}{2}
+		\]
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_45 (3)"}
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_45"}
+\end{figure}
+
+\textbf{Alcune considerazioni sulla scelta del parametro} \newline 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"immagini/1.PARTE8_Pagina_46"}	
+\end{figure}
+
+		Per scegliere un buon parametro ho due possibilità:
+		\begin{enumerate}
+			\item Scrivere esplicitamente le soluzioni delle reazioni vincolari e scegliere un parametro non fissato;
+			\item Verificare che nella struttura, dopo aver rimosso il vincolo corrispondente alla reazione scelta
+			come parametro, non si sia incrementato il grado di labilità;
+		\end{enumerate}
+	
+		Se si prende una struttura S caratterizzata da $l$ ed $i$ ed e si eliminano i vincoli e si ottiene una struttura S' caratterizzata da $l'$ ed $i'$, allora le seguenti condizioni sono equivalenti:
+	
+		\begin{itemize}
+			\item[(a)] $i'=0$
+			\item[(b)] $ l'= l $
+			\item[(c)] I parametri scelti sono atti a scrivere le soluzioni delle ECS di S
+		\end{itemize}
+Dimostrazione:
+		\[ (a) ~ i'= 0 \Leftrightarrow (b) ~ l'= l \]
+		Si parta con l'ipotizzare che $i'= 0$, si dimostrerà allora che $l'= l$. \newline
+		
+		Sia C la matrice di compatibilità per S:
+		\[ [C]_{s\times 3t} \vec{s}_{3t} = 0\]
+		\[ l = \dim \ker[C] = 3t - rk[C]\]
+		\[ i = \dim \ker[C^T] = s - rk[C]\]
+		Eliminare «i» vincoli equivale a eliminare «i» righe della matrice C, ottenendo una nuova matrice C'
+		relativa alla struttura S'.
+		\[
+		[C]_{s\times 3t} = \left[ \begin{array}{c}
+			[C']_{(s-i)\times 3t} \\
+			\left[ C^*\right]_{i\times 3t}
+		\end{array}\right] \hspace{2cm} s'= s -i
+		\]
+		$C^*$ è la matrice formata dalle righe cancellate da C per ottenere C'.
+		Nelle nostre ipotesi i'=0, ciò è vero se e solo se:
+		\[\dim\ker[C'^T] = 0\]
+		\[s' - rk[C'] = 0 \Rightarrow s - i = rk[C']\]
+		\[ 3t - s'= l'- i'\Rightarrow l'= 3t - s - i\]
+		\[l'= 3t - s + i = 3t - rk[C']\]
+		\[rk[C'] = 3t - l'\]
+		\[ s - i = 3t - l'\]
+		Ma per definizione:
+		\[ 3t - s = l - i \Rightarrow 3t - l = s - i\]
+		E infine
+		\[ \begin{split} s - i & = 3t - l' \\ 3t - l & = s - i \\ l = l' ~~~~~ \blacksquare \end{split} \]		
+Si dimostri ora che:
+		\[ (c) ~ \text{I parametri scelti sono atti a scrivere le soluzioni delle ECS di S} \Leftrightarrow (b) ~ l'= l\]
+		\[[E]_{3t \times s} = [C^T]_{3t \times s}\]
+		Per la struttura S' si avrà:
+		\[[E']_{3t \times (s-i)}\]
+		questa ottenuta cancellando da E le colonne corrispondenti ai vincoli eliminati
+		\[ [E]_{3t \times s} = \left[ [E']_{3t \times (s-i)} \hspace{0.25cm} [E^*]_{3t \times i} \right] \]
+		\[ [E]_{3t \times s} \vec{\lambda}_s + \vec{f}_{3t} = 0\]
+		In $ \lambda $ sono presenti i parametri relativi a tutti i vincoli.
+		
+		$ \lambda' $, con «s-i» componenti , sono i parametri relativi ai vincoli che rimangono;
+		
+		$ \lambda^* $ , con «i» componenti , sono i parametri relativi ai vincoli che vengono eliminati;
+		
+		Per il sistema S le equazioni cardinali sono:
+		\[[E']_{3t \times (s-i)} \vec{\lambda'}_{s-i} +  [E^*]_{3t \times i} \vec{\lambda^*}_{i} + \vec{f}_{3t} = 0 \]
+		Per il sistema S' le equazioni cardinali coincidono formalmente con quelle di S con la differenza
+		sostanziale che per S' le grandezze $ \lambda^* $ non sono più incognite ma parametri:
+		
+		Si riformuli così l'ipotesi $ (c) $.
+		
+\textbf{Il vettore $ \lambda^* $ deve risultare un vettore di parametri liberi atto a descrivere la soluzione delle ECS.}
+		
+		Che equivale a dire:
+		\[rk[E] = rk[E^T]\]
+		Una tale uguaglianza è equivalente al punto a), infatti osservando che:
+		\[rk[C] = rk[C^T] = rk[E]\]
+		Allora:
+		\[ l = 3t - rk[C] = 3t - rk[E] = 3t - rk[E'] = 3t -rk[C'] = l' ~~~~~ \blacksquare \]
+	
+{\Large \textbf{Metodo delle Forze}} \newline 
+\textbf{Caso 1}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_52 (2)"}	
+\end{figure}
+
+		\[ t =2; s = 3 \rightarrow 3t-s = -1 \rightarrow l = 0; i = 1 \]
+		Poiché le ECS non sono sufficienti a definire il
+		problema, si deve scegliere un parametro che
+		ne descriva le soluzioni.
+		
+		Si utilizza un criterio operativo che prevede l'eliminazione di un
+		vincolo semplice che non alteri il grado di
+		labilità.
+		
+		Se invece la struttura fosse stata labile, si sarebbe
+		dovuto verificare la condizione di equilibrio
+		della struttura e solo successivamente si poteva
+		valutare l’eliminazione della iperstaticità.
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_52"}	
+\end{figure}
+
+		\[ (s_C - s_B)\cdot \vec{e} = 0 \]
+		\[ s_C \cdot \vec{e} = \dfrac{q_2h^4}{8EI} - \dfrac{Xh^3}{3EI}\]
+		\[ s_B \cdot \vec{e} = \dfrac{q_1h^4}{8EI} + \dfrac{Xh^3}{3EI}\]	
+		Allora:
+		\[ \dfrac{q_2h^4}{8EI} - \dfrac{Xh^3}{3EI} - \dfrac{q_1h^4}{8EI} - \dfrac{Xh^3}{3EI} = 0 \]	
+		\[ (q_1 - q_2)\dfrac{h^4}{8EI} - X\dfrac{2h^3}{3EI} = 0	\]
+		La reazione vincolare del pendolo $X$
+		garantisce la congruenza, l’equivalenza,
+		tra la struttura equivalente e quella originale sia in
+		termini statici che cinematici.
+		\[ X = (q_1 - q_2)\dfrac{h^4}{8EI}\dfrac{3EI}{2h^3} = (q_1 - q_2)\dfrac{3}{16}h\]
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_53"}	
+\end{figure}
+
+		Per un carico maggiore sulla prima trave, la seconda
+		contribuisce a sostenere il carico.
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_54"}	
+\end{figure}
+
+		La deformata sulla prima trave presenta un punto di
+		flesso dove:
+		\[ v'' = M = 0\]
+\newpage		
+\textbf{Caso 2}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_55 (2)"}
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_55 (3)"}		
+\end{figure}
+
+		Questa volta il pendolo è deformabile. 
+		\[ (s_C - s_B) \cdot \vec{e}|_{pendolo} = \dfrac{Xh}{EA}\]
+		\[ (s_C - s_B) \cdot \vec{e}|_{struttura} = (s_C - s_B) \cdot \vec{e}|_{pendolo} = \dfrac{Xh}{EA} \]
+		\[(q_2 - q_1)\dfrac{h^4}{8EI} - X\dfrac{2h^3}{3EI} = \dfrac{Xh}{EA}\]
+		E dunque:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_52"}	
+\end{figure}
+ 
+		\[ X= \dfrac{(q_2 - q_1)\dfrac{h^4}{8EI}}{\dfrac{2h^3}{3EI}+\dfrac{h}{EA}}\]
+		In questo modo una volta fissato il rapporto tra EI e EA diverrà
+		possibile tracciare i diagrammi delle
+		sollecitazioni e la deformata. \newline 
+\newpage
+\textbf{Caso 3}	\newline 
+Quanto vale $f$?	
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_56 (2)"}	
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_56"}	
+\end{figure}
+
+		\[ t =1; s = 6 \rightarrow 3t-s = -3 \rightarrow l = 0; i = 3 \]
+		Per rendere la struttura non iperstatica devono essere rimossi 3 vincoli semplici. 
+		
+		Impongo: 
+		\[
+		\begin{cases}
+				\varphi_A = 0 \\
+				\varphi_B = 0 \\
+				w_B = 0
+		\end{cases}
+		\]
+		Applicando il principio di sovrapposizione degli effetti si scompone la struttura in 4 sottoschemi. 
+		\[ 	S^0 = X_1S^1 + X_2S^2 + X_3S^3\]
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_57 (2)"}
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_57 (3)"}	
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_57 (4)"}	
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_57 (5)"}		
+\end{figure}
+
+		\[X_1\varphi_A^1 + X_2\varphi_A^2 + X_3\varphi_A^3\]
+
+		\[
+		\begin{cases}
+			\varphi_A = \varphi_A^0 + X_1\varphi_A^1 + X_2\varphi_A^2 + X_3\varphi_A^3 = 0 \\
+			\varphi_B = \varphi_B^0 + X_1\varphi_B^1 + X_2\varphi_B^2 + X_3\varphi_B^3 = 0 \\
+			w_B = w_B^0 + X_1w_B^1 + X_2wi_B^2 + X_3w_B^3 = 0
+		\end{cases}
+		\]
+		In cui: 
+		\[
+		\begin{matrix}			
+				\varphi_A^0 = -\dfrac{ql^3}{24EI} & \varphi_B^0 = \dfrac{ql^3}{24EI} & w_B^0 = 0  \vspace{0.2cm} \\
+				\varphi_A^1 = \dfrac{1\cdot l}{3EI} & \varphi_B^1 = -\dfrac{1\cdot l}{6EI} & w_B^1 = 0 \vspace{0.2cm} \\
+				\varphi_A^2 = -\dfrac{1\cdot l}{6EI} & \varphi_B^2 = \dfrac{1\cdot l}{3EI} & w_B^2 = 0 \vspace{0.2cm} \\
+				\vspace{0.2cm}
+				\varphi_A^3 = 0  & \varphi_B^3 = 0 & w_B^3 = \dfrac{1\cdot l}{EA} 		
+		\end{matrix}
+		\]
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_58 (2)"}	
+\end{figure}
+
+		\[\left[ \begin{matrix}
+			\dfrac{1\cdot l}{3EI} & -\dfrac{1\cdot l}{6EI} & 0 \vspace{0.2cm} \\
+			-\dfrac{1\cdot l}{6EI} & \dfrac{1\cdot l}{3EI} & 0 \vspace{0.2cm} \\
+			0 & 0 & \dfrac{1\cdot l}{EA} \vspace{0.2cm}
+		\end{matrix}\right] \left[ \begin{array}{c}
+		X_1 \\
+		X_2 \\
+		X_3
+	\end{array}\right]  = \left[ \begin{array}{c}
+	\dfrac{ql^3}{24EI} \vspace{0.2cm} \\
+	- \dfrac{ql^3}{24EI}\vspace{0.2cm}  \\
+	0 \vspace{0.2cm}  \end{array} \right]
+	\]
+	Giungendo a:
+	\[ X_1 = \dfrac{ql^2}{12}; \hspace{1cm} X_2 = -\dfrac{ql^2}{12}; \hspace{1cm} X_3 = 0\]
+	E dunque: 
+	\[ f = \dfrac{5}{384}\dfrac{ql^4}{EI} - \dfrac{ql^2}{12}\dfrac{l^2}{16EI} = \dfrac{1}{384}\dfrac{ql^4}{EI}  \]
+	Infine: 
+	\[ f = \dfrac{5}{384}\dfrac{ql^4}{EI} < f = \dfrac{1}{384}\dfrac{ql^4}{EI} \]
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{"immagini/1.PARTE8_Pagina_58"}	
+	\end{figure}
+\newpage		
+\textbf{Caso 4}	\newline
+		Quanto vale $f$? 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_59"}	
+\end{figure}
+		
+		Come prima, per rendere la struttura non iperstatica devono essere rimossi 3 vincoli semplici. 
+		
+		Impongo: 
+		\[
+		\begin{cases}
+			\varphi_A = 0 \\
+			\varphi_B = 0 \\
+			w_B = 0
+		\end{cases}
+		\]
+		Applicando il principio di sovrapposizione degli effetti si scompone la struttura in 4 sottoschemi. 
+		\[ 	S^0 = X_1S^1 + X_2S^2 + X_3S^3\]
+		\[ \begin{aligned}
+				\mu = \dfrac{2\alpha\Delta T}{h} \hspace{1cm} & \varphi' = \mu \vspace{0.2cm} \\
+			\varphi = \mu z + C_1 \hspace{1cm} & \nu = \mu\dfrac{z^2}{2} + C_1 z + C_2 \vspace{0.2cm} \\
+		\end{aligned}
+		\]
+		Applicando le condizioni al contorno si ottiene: 
+		\[ \nu(0) = 0 = C_2 \hspace{1cm} \nu(l) = \mu \dfrac{l^2}{2} + C_1l = 0\]
+		\[ \varphi(z) = \mu\left( z-\dfrac{l}{2}\right) \hspace{1cm} \nu(z) = \mu z\left( \dfrac{z}{2}-\dfrac{l}{2}\right) \] 
+		La matrice sarà la stessa del caso precedente eccezion fatta per il vettore dei termini noti:
+		\[\left[ \begin{matrix}
+			\dfrac{1\cdot l}{3EI} & -\dfrac{1\cdot l}{6EI} & 0 \vspace{0.2cm} \\
+			-\dfrac{1\cdot l}{6EI} & \dfrac{1\cdot l}{3EI} & 0 \vspace{0.2cm} \\
+			0 & 0 & \dfrac{1\cdot l}{EA} \vspace{0.2cm}
+		\end{matrix}\right] \left[ \begin{array}{c}
+			X_1 \\
+			X_2 \\
+			X_3
+		\end{array}\right]  = \left[ \begin{array}{c}
+			\dfrac{\mu l}{2} \vspace{0.2cm} \\
+			- \dfrac{\mu l}{2}\vspace{0.2cm}  \\
+			0 \vspace{0.2cm}  \end{array} \right]
+		\]
+		Giungendo a:
+		\[ X_1 = EI\mu; \hspace{1cm} X_2 = -EI\mu; \hspace{1cm} X_3 = 0\]
+		Da Mohr si ottiene: 
+		\[q^* = \dfrac{M}{EI} + \mu = - \dfrac{EI/mu}{EI} + \mu = 0\]
+		E dunque: 	
+		\[M^* = v = 0\]	
+		E la struttura non si deforma ma si tensiona.
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_60"}	
+\end{figure} 
+		
+		Per strutture iperstatiche le distorsioni provocano
+		sollecitazioni. \newline 
+		
+{\Large \textbf{Principio dei Lavori Virtuali applicato al calcolo delle travi}} \newline 
+		In un sistema deformabile, il lavoro virtuale esterno compiuto da un sistema di forze generico per
+		un qualunque insieme di spostamenti virtuali compatibili è uguale al lavoro virtuale interno
+		compiuto dalle tensioni interne, in equilibrio con le suddette forze esterne, per le componenti di
+		deformazione associate al sistema di spostamenti virtuali prescelto.
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.25\linewidth]{"immagini/1.PARTE8_Pagina_61"}	
+\end{figure}
+
+		Si consideri un sistema di forze e tensioni in equilibrio e un sistema di spostamenti e deformazioni
+		congruenti, il lavoro suddetto risulta:
+		\[ 
+		L_{Vint} = \int_{\Omega}[T]\cdot[D] = \int_{\Omega}  \left( \sigma_x^f\varepsilon_x^s + \sigma_y^f\varepsilon_y^s + \sigma_z^f\varepsilon_z^s + \tau_xy^f\gamma_xy^s + \tau_xz^f\gamma_xz^s +\tau_yz^f\gamma_yz^s \right) d\Omega
+		\]
+		In cui: 
+		\[		
+		[T] = \left[ \begin{array}{ccc}
+			\sigma_x^f & \tau_{xy}^f & \tau_{xz} \\
+			\tau_{xy}^f & \sigma_y & \tau_{yz} \\
+			\tau_{xz} & \tau_{yz} & \sigma_z
+		\end{array}\right] \hspace{1cm} [D] = \left[ \begin{array}{ccc}
+		\varepsilon_x^s & \gamma_{xy}^s & \gamma_{xz}^s \\
+		\gamma_{xy}^s & \varepsilon_y^s & \gamma_{yz}^s \\
+		\gamma_{xz}^s & \gamma_{yz}^s & \varepsilon_z^s
+		\end{array}\right] 	
+		\]
+		\[L_{Vext} = \int_{\Omega}\vec{F}^f \cdot \vec{s}^s +\int_{\partial\Omega}\vec{p}^f \cdot \vec{s}^s  \]
+		Deve ovviamente sussistere: 
+		\[L_{Vint} = L_{Vext}\]
+		Innanzitutto, poiché si applica il criterio al caso di elementi monodimensionali come le travi, varrà:
+		\[\sigma_x = \sigma_y = \tau_xy = 0\]
+		E dunque:
+		\[ 
+		L_{Vint} = \int_{\Omega}  \left( \sigma_z^f\varepsilon_z^s +  \vec{\tau_z}^f\vec{\gamma_z}^s \right) d\Omega = \int_{l}\int_{A} \left( \sigma_z^{f,N}\varepsilon_z^{s,N} + \sigma_z^{f,M}\varepsilon_z^{s,M}+ \vec{\tau_z}^{f, T}\vec{\gamma_z}^{s,T} \right) dldA 
+		\]
+		\[ \sigma_z^{f,N} = \sigma_z^{N=1}N^f\]
+		\[ \varepsilon_z^{s,N} = \varepsilon_z^{N=1}N^s\]
+		\[ 
+		L_{Vint} = \int_{l}\int_{A} \left( \sigma_z^{N=1}N^f\varepsilon_z^{N=1}N^s + \sigma_z^{M=1}M^f\varepsilon_z^{M=1}M^s+ \vec{\tau_z}^{T=1}T^f\vec{\gamma_z}^{T=1}T^s \right) dldA 
+		\]
+		\[\left[  \int_{A}\dfrac{1}{2}  \left( \sigma_z^{N=1}\varepsilon_z^{N=1}\right) dA\right] = \dfrac{1}{2} \dfrac{1^2}{EA} dz \]
+		\[\left[  \int_{A}\dfrac{1}{2}  \left( \sigma_z^{M=1}\varepsilon_z^{M=1}\right) dA\right] = \dfrac{1}{2} \dfrac{1^2}{EI} dz \]
+		\[\left[  \int_{A}\dfrac{1}{2}  \left( \tau_z^{T=1}\gamma_z^{T=1}\right) dA\right] = \dfrac{1}{2} \dfrac{1^2\chi}{GA} dz \]
+		\[ 
+		L_{Vint} = \int_{l} \left( N^fN^s\dfrac{1}{EA} + M^fM^s \dfrac{1}{EI} + T^fT^s\dfrac{\chi}{GA} \right) dz
+		\]
+		\[ 
+		\begin{split}
+		L_{Vint} & = \int_{l} \left[  N^f \left( \dfrac{N^s}{EA} +\lambda^s \right)  + M^f\left( \dfrac{M^s}{EI} +\mu^s \right) + T^f\left( \dfrac{\chi T^s}{GA} +\vartheta^s \right) \right] dz + \\
+		& + \underbrace{\sum_{h=1}^{k}\left( N_h^f \cdot Dw_h^i + M_h^f \cdot D\varphi_h^i + T_h^f \cdot Du_h^i \right)}_{\text{Distorsioni distribuite e localizzate}}
+		\end{split}		
+		\]
+
+{\Large \textbf{Principio dei Lavori Virtuali per strutture \\ ISOSTATICHE}} \newline 
+\textbf{Caso 1}	\newline
+		Quanto vale $v_C$?
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_64"}	
+\end{figure}
+
+		Composizione cinematica: 
+		\[v_C = -\varphi_Bl \hspace{1cm} \varphi_B = -\dfrac{Ml}{3EI} \hspace{1cm} v_C = \dfrac{Ml^2}{3EI}\]
+
+
+		Per applicare il principio dei lavori virtuali si
+		deve definire qual è il sistema di forze e qual è
+		quello degli spostamenti.
+		
+		
+		Il sistema degli spostamenti è quello fornito dal
+		problema, dato che dev’essere individuato $ v_C $.
+		
+		Il sistema di forze potà invece essere un qualsiasi sistema di forze, purché in
+		equilibrio e scelto opportunamente per fare 
+		lavoro solo con $ v_C $.
+		
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+	\includegraphics[width=\textwidth]{"immagini/1.PARTE8_Pagina_65 (2)"} 	\caption{Sistema delle forze}
+	\end{subfigure}
+\hspace{1cm}
+	\begin{subfigure}[b]{0.3\textwidth}
+	\includegraphics[width=\textwidth]{"immagini/1.PARTE8_Pagina_65"} 	\caption{Sistema degli spostamenti}	
+	\end{subfigure}	
+\end{figure}
+
+		\[L_{Vext} = F^f \cdot v_C + R_A^f \cdot v_A^s + R_B^f \cdot v_B^s = 1 \cdot v_C^s = v_C^s\]
+		\[
+		L_{Vint} = \int_{l} \left[  N^f \left( \dfrac{N^s}{EA} +\lambda^s \right)  + M^f\left( \dfrac{M^s}{EI} +\mu^s \right) + T^f\left( \dfrac{\chi T^s}{GA} +\vartheta^s \right) \right] dz 
+		\]
+		 
+		\[ \begin{split}
+		\text{Per} ~ 0<z<l: & \\
+		\begin{matrix}
+			T^f = -1 & T^s = -\dfrac{M}{l} \\
+			M^f = -z & M^s = -\dfrac{Mz}{l}
+		\end{matrix}
+	\end{split}
+		\hspace{2.5cm}
+		\begin{split}
+			\text{Per} ~ l<z<2l: & \\
+		\begin{matrix}
+			T^f = 1 & T^s = 0 \\
+			M^f = -(2l-z) & M^s = 0
+		\end{matrix}
+		\end{split}
+		\]
+		Allora:
+		\[ \begin{split}
+		L_{Vint} & = \int_{0}^{l} \left[ M^f\left( \dfrac{M^s}{EI} +\mu^s \right) + T^f\left( \dfrac{\chi T^s}{GA} +\vartheta^s \right) \right] dz + \\
+		& + \int_{l}^{2l} \left[ M^f\left( \dfrac{M^s}{EI} +\mu^s \right) + T^f\left( \dfrac{\chi T^s}{GA} +\vartheta^s \right) \right]
+		\end{split}
+		\]
+		\[
+		L_{Vint} = \int_{0}^{l} \left[ -z\left( -\dfrac{M}{lEI}z \right) -1\left( l\dfrac{M \chi}{lGA} \right) \right] dz + \int_{l}^{2l} \left[-(2l-z)\left( 0\cdot\dfrac{M^s}{EI} \right) + 1\left( 0 \cdot \dfrac{\chi T^s}{GA} \right) \right]
+		\]
+		\[
+		L_{Vint} = \int_{0}^{l} \left[ \left( \dfrac{M}{lEI}z^2 \right) \left( \dfrac{M \chi}{lGA} \right) \right] dz = \dfrac{M}{l}\dfrac{1}{EI}\dfrac{z^3}{3} + \dfrac{M}{l}\dfrac{\chi}{GA}z\Bigr\rvert_{0}^{l} = \dfrac{Ml^2}{3EI} + \dfrac{M\chi}{GA}
+		\]
+		Infine:
+		\[L_{Vint} = L_{Vext} \Rightarrow v_C = \dfrac{Ml^2}{3EI} + \dfrac{M\chi}{GA}\]
+
+\textbf{Caso 2}	\newline
+		Quanto vale $\Delta\varphi_C$?
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"immagini/1.PARTE8_Pagina_67 (2)"}	
+\end{figure}
+
+		\[ M(\alpha) = \dfrac{M}{R\sqrt{2}}\dfrac{\sqrt{2}}{2}R\sin\alpha - \dfrac{M}{R\sqrt{2}}\dfrac{\sqrt{2}}{2}R(1-\cos\alpha)\]
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"immagini/1.PARTE8_Pagina_67"}	
+\end{figure}
+
+		La cerniera esterna di destra non subisce spostamenti e quindi non compie lavoro.
+		
+		La cerniera esterna di sinistra subisce uno spostamento dovuto al cedimento nel sistema degli
+		spostamenti, ma è ortogonale alla forza applicata nel sistema delle forze per cui compie lavoro nullo.
+		
+		Le forze sulla cerniera interna compiono lavoro uguale ed opposto per cui la loro risultante è nulla.
+		\[L_{Vext} = M_{C^+}^f \cdot \varphi_{C^+}^s + M_{C^-}^f \cdot \varphi_{C^-}^s = 1 \cdot \varphi_{C^+}^s + (-1) \cdot \varphi_{C^-}^s = \Delta\varphi_C^s \]
+		Nel calcolo del lavoro virtuale interno si trascuri la deformabilità a taglio. 
+		\[ \begin{split}
+		L_{Vint} & = \int_{l} \left[ M^f\left( \dfrac{M^s}{EI} +\mu^s \right)\right]  = \int_{0}^{\pi} -\sin\alpha \left( \dfrac{M}{2EIR}R(\sin\alpha - 1 +\cos\alpha) \right) Rd\alpha = \\ 
+		& = \dfrac{MR}{2EI} \left( \dfrac{\sin2\alpha - 2\alpha}{2} \Bigr\rvert_{0}^{\pi} - \cos\alpha\Bigr\rvert_{0}^{\pi} + \dfrac{\cos^2\alpha}{2}\Bigr\rvert_{0}^{\pi} \right)  = \\
+		& = \dfrac{MR}{2EI}\left( 2 - \dfrac{\pi}{2}\right) 
+		\end{split}
+		\]
+		Infine:
+		\[L_{Vint} = L_{Vext} \Rightarrow \Delta\varphi_C = \dfrac{MR}{2EI}\left( 2 - \dfrac{\pi}{2}\right)\]
+
+{\Large \textbf{Principio dei Lavori Virtuali per strutture \\ IPERSTATICHE}} \newline 
+		Quanto vale $\varphi_D$?
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE8_Pagina_69 (2)"}
+	\includegraphics[width=0.3\linewidth]{"immagini/1.PARTE8_Pagina_69 (3)"}		
+\end{figure}
+
+		\[ i= 2, l=0\]
+		La struttura è due volete iperstatica, purché non ne venga alterata la labilità si possono considerare i vincoli agenti uno per volta applicando il principio di sovrapposizione degli effetti a $ 1 + 2 $ sottostrutture: $S^0, S^1, S^2$.
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"immagini/1.PARTE8_Pagina_69"}
+\end{figure}
+		Le reazioni vincolari incognite sono $X_1, X_2$, necessito quindi di un sistema $2\times2$  che collega spostamenti a reazioni.
+		\[
+		\begin{cases}
+			\Delta\varphi_B = \Delta\varphi_B^0 + X_1\Delta\varphi_B^1 + X_2\Delta\varphi_B^2 = 0 \\
+			\Delta\varphi_C = \Delta\varphi_B^0 + X_1\Delta\varphi_C^1 + X_2\Delta\varphi_C^2 = 0 
+		\end{cases}
+		\]
+		\[
+		\left[ \begin{matrix}
+			\Delta\varphi_B^1 & \Delta\varphi_B^2 \\
+			\Delta\varphi_C^1 & \Delta\varphi_C^2
+		\end{matrix}\right] 
+		\left[ \begin{array}{c}
+		X_1 \\
+		X_2
+		\end{array}\right] 
+		+
+		\left[ \begin{array}{c}
+			\Delta\varphi_B^0 \\
+			\Delta\varphi_C^0
+		\end{array}\right]  = 0
+		\]
+		Il Principio dei Lavori Virtuali può essere applicato per il calcolo dei termini della matrice dei
+		coefficienti di $ X $.
+		
+		Il termine della matrice $ a_{ij} $ rappresenta lo spostamento del punto «i» quando è attiva la sola forza «j».
+		
+		Se si considera che nel punto «i» agisca la forza «i», da cui il relativo schema $ S^i $ , allora:
+		\[
+		a_{ij} \rightarrow \begin{array}{c}
+			S^i ~ \text{Sistema di Forze} \\
+			S^j ~ \text{Sistema di Spostamenti} \\			
+		\end{array}
+		\]
+		Questo approccio risulta però piuttosto laborioso nonostante la matrice dei coefficienti - 
+		matrice di deformabilità della struttura - risulti simmetrica.
+		
+		Se invece si applica il PLV con:
+		\[ 
+		\begin{array}{c}
+			S^i ~ \text{Sistema di Forze} \\
+			S' ~ \text{Sistema di Spostamenti} \\			
+		\end{array}
+		\]
+		Si ottiene la «i»esima riga della matrice completa associata alla matrice di deformabilità.
+		
+		Per definire perciò la matrice è necessario applicare «i» volte il PLV, con «i» pari al grado di
+		iperstaticità della struttura. \newline 
+
+\textbf{Prima applicazione}	\newline
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_71 (2)"}
+\end{figure}
+
+		\[L_{Vext} = M_{B^+}^f \cdot \varphi_{B^+}^s + M_{B^-}^f \cdot \varphi_{B^-}^s = 1 \cdot \varphi_{B^+}^s + (-1) \cdot \varphi_{B^-}^s = \Delta\varphi_B^s \]
+		\[ 
+		L_{Vint} = \int_{s}\left[ M^f\left( \dfrac{M^s}{EI} +\mu^s \right)\right] = \int_{s} M^1\left( \dfrac{M^0}{EI}  +X_1\dfrac{M^1}{EI}+X_2\dfrac{M^2}{EI} \right) ds 		
+		\]	
+		E dunque, poiché:
+		\[L_{Vint} = L_{Vext} \Rightarrow \Delta\varphi_B = \int_{s} M^1\left( \dfrac{M^0}{EI}  +X_1\dfrac{M^1}{EI}+X_2\dfrac{M^2}{EI} \right) ds = 0\]
+
+\textbf{Seconda applicazione}	\newline
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_71"}
+\end{figure}
+
+		\[L_{Vext} = M_{C^+}^f \cdot \varphi_{C^+}^s + M_{C^-}^f \cdot \varphi_{C^-}^s = 1 \cdot \varphi_{C^+}^s + (-1) \cdot \varphi_{C^-}^s = \Delta\varphi_C^s \]
+		\[ 
+		L_{Vint} = \int_{s}\left[ M^f\left( \dfrac{M^s}{EI} +\mu^s \right)\right] = \int_{s} M^2\left( \dfrac{M^0}{EI}  +X_1\dfrac{M^1}{EI}+X_2\dfrac{M^2}{EI} \right) ds 		
+		\]	
+		E dunque, poiché:
+		\[L_{Vint} = L_{Vext} \Rightarrow \Delta\varphi_C = \int_{s} M^2\left( \dfrac{M^0}{EI}  +X_1\dfrac{M^1}{EI}+X_2\dfrac{M^2}{EI} \right) ds  = 0\]
+		Al fine di definire le forze X, per la risoluzione delle equazioni di congruenza sono necessari gli
+		andamenti dei momenti flettenti.
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"immagini/1.PARTE8_Pagina_73"}
+\end{figure}
+
+		A questo punto lo spostamento incognito richiesto si può ricercare nello schema isostatico ora
+		perfettamente noto.
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"immagini/1.PARTE8_Pagina_74"}
+\end{figure}
+
+		Si applica un'ultima  volta il PLV usando ora come sistema delle forze una configurazione di carico che
+		generi lavoro con lo spostamento richiesto.
+		\[
+		\text{Ricerca Spostamento} ~ \rightarrow \begin{array}{c}
+			S^* ~ \text{Sistema di Forze} \\
+			S'~ \text{Sistema di Spostamenti} \\			
+		\end{array}
+		\]
+		\[L_{Vext} = M_{D}^f \cdot \varphi_{D}^s = \varphi_D^s \]
+		\[ 
+		L_{Vint} = \int_{s}\left[ M^f\left( \dfrac{M^s}{EI} +\mu^s \right)\right] = \int_{s} M^*\left( \dfrac{M^0}{EI}  +X_1\dfrac{M^1}{EI}+X_2\dfrac{M^2}{EI} \right) ds 		
+		\]	
+		E dunque, poiché:
+		\[L_{Vint} = L_{Vext} \Rightarrow \varphi_D = \int_{s} M^*\left( \dfrac{M^0}{EI}  +X_1\dfrac{M^1}{EI}+X_2\dfrac{M^2}{EI} \right) ds  = 0\]
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"immagini/1.PARTE8_Pagina_75"}
+\end{figure}
+
+\newpage
+{\Large \textbf{NOTE}}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\vfill
+%\begin{tcolorbox}[height=4.5cm]
+%	This box has a height of 1cm.
+%\end{tcolorbox}
+
+\end{adjustwidth}
+\end{document}
